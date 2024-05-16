@@ -18,15 +18,12 @@ export default async function reactCompilerLoader(this: webpack.LoaderContext<Re
     const { babelTransFormOpt, ...reactCompilerConfig } = this.getOptions();
 
     const result = await babel.transformAsync(input, {
+      filename: this.resourcePath,
       // user configured babel option
       ...babelTransFormOpt,
       // override babel plugins
       plugins: [
-        [BabelPluginReactCompiler, {
-          ...reactCompilerConfig,
-          // Always override filename to the current file
-          filename: this.resourcePath
-        }],
+        [BabelPluginReactCompiler, reactCompilerConfig],
         ...(babelTransFormOpt?.plugins || [])
       ],
       // override babel parserOpts
