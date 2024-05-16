@@ -1,0 +1,8 @@
+node_modules
+types
+dist
+.temp
+.DS_Store
+*.log*
+Thumb.db
+tmp

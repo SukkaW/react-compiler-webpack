@@ -1,0 +1,63 @@
+{
+  "name": "react-compiler-webpack",
+  "version": "0.0.1",
+  "description": "The webpack/Next.js Plugin for React Compiler",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "react-forget",
+    "react-compiler",
+    "webpack-loader",
+    "webpack",
+    "nextjs",
+    "app-router"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/core": "^7.24.5",
+    "@babel/plugin-syntax-jsx": "^7.24.1",
+    "@babel/plugin-syntax-typescript": "^7.24.1",
+    "loader-utils": "^3.2.1"
+  },
+  "devDependencies": {
+    "@eslint-sukka/node": "^6.0.0-beta.9",
+    "@eslint-sukka/ts": "^6.0.0-beta.9",
+    "@swc-node/register": "^1.9.1",
+    "@swc/core": "^1.5.7",
+    "@types/babel__core": "^7.20.5",
+    "@types/chai": "^4.3.16",
+    "@types/loader-utils": "^2.0.6",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "^20.12.12",
+    "browserslist": "^4.23.0",
+    "bumpp": "^9.4.1",
+    "chai": "^4.4.1",
+    "eslint": "^9.2.0",
+    "eslint-config-sukka": "^6.0.0-beta.9",
+    "eslint-formatter-sukka": "^6.0.0-beta.9",
+    "memfs": "^5.0.0-next.1",
+    "mocha": "^10.4.0",
+    "mocha-chai-jest-snapshot": "^1.1.4",
+    "next": "^14.2.3",
+    "postcss": "^8.4.38",
+    "rimraf": "^5.0.7",
+    "rollup": "^4.17.2",
+    "rollup-plugin-copy": "^3.5.0",
+    "rollup-plugin-dts": "^6.1.0",
+    "rollup-plugin-swc3": "^0.11.2",
+    "swc-loader": "^0.2.6",
+    "typescript": "^5.4.5",
+    "webpack": "^5.91.0"
+  },
+  "peerDependencies": {
+    "@stylexjs/stylex": "*"
+  },
+  "overrides": {
+    "hasown": "npm:@nolyfill/hasown@latest",
+    "chai": "$chai"
+  }
+}

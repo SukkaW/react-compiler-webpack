@@ -1,0 +1,5 @@
+{
+  "private": true,
+  "main": "../dist/next.js",
+  "types": "../dist/next.d.ts"
+}
