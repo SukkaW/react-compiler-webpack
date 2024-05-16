@@ -1,6 +1,6 @@
 {
   "name": "react-compiler-webpack",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "The webpack/Next.js Plugin for React Compiler",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
