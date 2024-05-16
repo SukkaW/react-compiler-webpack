@@ -21,6 +21,7 @@
     "@babel/core": "^7.24.5",
     "@babel/plugin-syntax-jsx": "^7.24.1",
     "@babel/plugin-syntax-typescript": "^7.24.1",
+    "babel-plugin-react-compiler": "^0.0.0-experimental-c23de8d-20240515",
     "loader-utils": "^3.2.1"
   },
   "devDependencies": {
