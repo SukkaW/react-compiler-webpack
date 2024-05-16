@@ -9,6 +9,7 @@ import { externalModules } from './get-webpack-compiler';
 import type { ReactCompilerLoaderOption } from '../../src';
 
 import { reactCompilerLoader } from '../../dist';
+import { useSwcLoader } from './get-swc-loader';
 
 export default (fixture: string, loaderOptions?: ReactCompilerLoaderOption, config: RspackOptions = {}) => {
   process.env.RSPACK_CONFIG_VALIDATE = 'loose';
@@ -30,34 +31,26 @@ export default (fixture: string, loaderOptions?: ReactCompilerLoaderOption, conf
     module: {
       rules: [
         {
-          test: /\.jsx$/,
-          use: {
-            loader: 'builtin:swc-loader',
-            options: {
-              jsc: {
-                parser: {
-                  syntax: 'ecmascript',
-                  jsx: true
-                }
-              }
+          test: /\.[cm]?jsx$/i,
+          exclude: /node_modules/,
+          use: [
+            useSwcLoader(false, 'builtin:swc-loader'),
+            {
+              loader: reactCompilerLoader,
+              options: loaderOptions
             }
-          },
-          type: 'javascript/auto'
+          ]
         },
         {
-          test: /\.tsx$/,
-          use: {
-            loader: 'builtin:swc-loader',
-            options: {
-              jsc: {
-                parser: {
-                  syntax: 'typescript',
-                  tsx: true
-                }
-              }
+          test: /\.[cm]?tsx$/i,
+          exclude: /node_modules/,
+          use: [
+            useSwcLoader(true, 'builtin:swc-loader'),
+            {
+              loader: reactCompilerLoader,
+              options: loaderOptions
             }
-          },
-          type: 'javascript/auto'
+          ]
         },
         {
           test: /\.[cm]?[jt]sx$/i,

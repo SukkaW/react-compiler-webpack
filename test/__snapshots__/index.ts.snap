@@ -1,109 +1,74 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`react-compiler-webpack (rspack) should optimize complex component 1`] = `
-"function _array_like_to_array(arr, len) {
-    if (len == null || len > arr.length) len = arr.length;
-    for(var i = 0, arr2 = new Array(len); i < len; i++)arr2[i] = arr[i];
-    return arr2;
-}
-function _array_with_holes(arr) {
-    if (Array.isArray(arr)) return arr;
-}
-function _iterable_to_array_limit(arr, i) {
-    var _i = arr == null ? null : typeof Symbol !== \\"undefined\\" && arr[Symbol.iterator] || arr[\\"@@iterator\\"];
-    if (_i == null) return;
-    var _arr = [];
-    var _n = true;
-    var _d = false;
-    var _s, _e;
-    try {
-        for(_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true){
-            _arr.push(_s.value);
-            if (i && _arr.length === i) break;
-        }
-    } catch (err) {
-        _d = true;
-        _e = err;
-    } finally{
-        try {
-            if (!_n && _i[\\"return\\"] != null) _i[\\"return\\"]();
-        } finally{
-            if (_d) throw _e;
-        }
-    }
-    return _arr;
-}
-function _non_iterable_rest() {
-    throw new TypeError(\\"Invalid attempt to destructure non-iterable instance.\\\\\\\\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.\\");
-}
-function _sliced_to_array(arr, i) {
-    return _array_with_holes(arr) || _iterable_to_array_limit(arr, i) || _unsupported_iterable_to_array(arr, i) || _non_iterable_rest();
-}
-function _unsupported_iterable_to_array(o, minLen) {
-    if (!o) return;
-    if (typeof o === \\"string\\") return _array_like_to_array(o, minLen);
-    var n = Object.prototype.toString.call(o).slice(8, -1);
-    if (n === \\"Object\\" && o.constructor) n = o.constructor.name;
-    if (n === \\"Map\\" || n === \\"Set\\") return Array.from(n);
-    if (n === \\"Arguments\\" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _array_like_to_array(o, minLen);
-}
+"import { jsx as _jsx, jsxs as _jsxs } from \\"react/jsx-runtime\\";
 import { c as _c } from \\"react/compiler-runtime\\";
-import { useState, useRef } from \\"react\\";
+import { useState, useRef } from 'react';
 export default function Sukka() {
-    var $ = _c(13);
-    var _useState = _sliced_to_array(useState(0), 2), count = _useState[0], setCount = _useState[1];
-    var singletonRef = useRef(null);
+    const $ = _c(13);
+    const [count, setCount] = useState(0);
+    const singletonRef = useRef(null);
     if (!singletonRef.current) singletonRef.current = new AbortController();
-    var t0;
+    let t0;
     if ($[0] === Symbol.for(\\"react.memo_cache_sentinel\\")) {
-        t0 = function() {
-            return setCount(function(count_0) {
-                return count_0 + 1;
-            });
-        };
+        t0 = ()=>setCount((count_0)=>count_0 + 1);
         $[0] = t0;
     } else t0 = $[0];
-    var handleButtonClick = t0;
+    const handleButtonClick = t0;
     if (count > 10) return null;
-    var t1;
+    let t1;
     if ($[1] !== count) {
-        t1 = /*#__PURE__*/ React.createElement(\\"p\\", null, \\"Count: \\", count);
+        t1 = /*#__PURE__*/ _jsxs(\\"p\\", {
+            children: [
+                \\"Count: \\",
+                count
+            ]
+        });
         $[1] = count;
         $[2] = t1;
     } else t1 = $[2];
-    var t2;
+    let t2;
     if ($[3] === Symbol.for(\\"react.memo_cache_sentinel\\")) {
-        t2 = /*#__PURE__*/ React.createElement(\\"button\\", {
-            onClick: handleButtonClick
-        }, \\"Increment\\");
+        t2 = /*#__PURE__*/ _jsx(\\"button\\", {
+            onClick: handleButtonClick,
+            children: \\"Increment\\"
+        });
         $[3] = t2;
     } else t2 = $[3];
-    var t3;
+    let t3;
     if ($[4] !== count) {
-        t3 = count > 10 && /*#__PURE__*/ React.createElement(\\"p\\", null, \\"Count is higher than 10\\");
+        t3 = count > 10 && /*#__PURE__*/ _jsx(\\"p\\", {
+            children: \\"Count is higher than 10\\"
+        });
         $[4] = count;
         $[5] = t3;
     } else t3 = $[5];
-    var t4 = count > 0;
-    var t5;
+    const t4 = count > 0;
+    let t5;
     if ($[6] === Symbol.for(\\"react.memo_cache_sentinel\\")) {
-        t5 = function() {
-            return setCount(0);
-        };
+        t5 = ()=>setCount(0);
         $[6] = t5;
     } else t5 = $[6];
-    var t6;
+    let t6;
     if ($[7] !== t4) {
-        t6 = /*#__PURE__*/ React.createElement(\\"button\\", {
+        t6 = /*#__PURE__*/ _jsx(\\"button\\", {
             disabled: t4,
-            onClick: t5
-        }, \\"Reset Count\\");
+            onClick: t5,
+            children: \\"Reset Count\\"
+        });
         $[7] = t4;
         $[8] = t6;
     } else t6 = $[8];
-    var t7;
+    let t7;
     if ($[9] !== t1 || $[10] !== t3 || $[11] !== t6) {
-        t7 = /*#__PURE__*/ React.createElement(\\"div\\", null, t1, t2, t3, t6);
+        t7 = /*#__PURE__*/ _jsxs(\\"div\\", {
+            children: [
+                t1,
+                t2,
+                t3,
+                t6
+            ]
+        });
         $[9] = t1;
         $[10] = t3;
         $[11] = t6;
@@ -115,10 +80,11 @@ export default function Sukka() {
 `;
 
 exports[`react-compiler-webpack (rspack) should work 1`] = `
-"import { c as _c } from \\"react/compiler-runtime\\";
+"import { jsx as _jsx } from \\"react/jsx-runtime\\";
+import { c as _c } from \\"react/compiler-runtime\\";
 export default function Example() {
-    var $ = _c(2);
-    var t0;
+    const $ = _c(2);
+    let t0;
     if ($[0] === Symbol.for(\\"react.memo_cache_sentinel\\")) {
         t0 = [
             1,
@@ -128,14 +94,14 @@ export default function Example() {
         ];
         $[0] = t0;
     } else t0 = $[0];
-    var value = t0;
-    var t1;
+    const value = t0;
+    let t1;
     if ($[1] === Symbol.for(\\"react.memo_cache_sentinel\\")) {
-        t1 = /*#__PURE__*/ React.createElement(\\"div\\", null, value.map(function(i) {
-            return /*#__PURE__*/ React.createElement(\\"p\\", {
-                key: i
-            }, i);
-        }));
+        t1 = /*#__PURE__*/ _jsx(\\"div\\", {
+            children: value.map((i)=>/*#__PURE__*/ _jsx(\\"p\\", {
+                    children: i
+                }, i))
+        });
         $[1] = t1;
     } else t1 = $[1];
     return t1;
@@ -144,10 +110,11 @@ export default function Example() {
 `;
 
 exports[`react-compiler-webpack (rspack) should work with tsx 1`] = `
-"import { c as _c } from \\"react/compiler-runtime\\";
+"import { jsx as _jsx } from \\"react/jsx-runtime\\";
+import { c as _c } from \\"react/compiler-runtime\\";
 export default function Example() {
-    var $ = _c(2);
-    var t0;
+    const $ = _c(2);
+    let t0;
     if ($[0] === Symbol.for(\\"react.memo_cache_sentinel\\")) {
         t0 = [
             1,
@@ -157,21 +124,21 @@ export default function Example() {
         ];
         $[0] = t0;
     } else t0 = $[0];
-    var value = t0;
-    var t1;
+    const value = t0;
+    let t1;
     if ($[1] === Symbol.for(\\"react.memo_cache_sentinel\\")) {
-        t1 = /*#__PURE__*/ React.createElement(\\"div\\", null, value.map(function(i) {
-            return /*#__PURE__*/ React.createElement(\\"p\\", {
-                key: i
-            }, i);
-        }));
+        t1 = /*#__PURE__*/ _jsx(\\"div\\", {
+            children: value.map((i)=>/*#__PURE__*/ _jsx(\\"p\\", {
+                    children: i
+                }, i))
+        });
         $[1] = t1;
     } else t1 = $[1];
     return t1;
 }
-export var AnotherExmaple = function() {
-    var $ = _c(2);
-    var t0;
+export const AnotherExmaple = ()=>{
+    const $ = _c(2);
+    let t0;
     if ($[0] === Symbol.for(\\"react.memo_cache_sentinel\\")) {
         t0 = [
             1,
@@ -181,14 +148,14 @@ export var AnotherExmaple = function() {
         ];
         $[0] = t0;
     } else t0 = $[0];
-    var value = t0;
-    var t1;
+    const value = t0;
+    let t1;
     if ($[1] === Symbol.for(\\"react.memo_cache_sentinel\\")) {
-        t1 = /*#__PURE__*/ React.createElement(\\"div\\", null, value.map(function(i) {
-            return /*#__PURE__*/ React.createElement(\\"p\\", {
-                key: i
-            }, i);
-        }));
+        t1 = /*#__PURE__*/ _jsx(\\"div\\", {
+            children: value.map((i)=>/*#__PURE__*/ _jsx(\\"p\\", {
+                    children: i
+                }, i))
+        });
         $[1] = t1;
     } else t1 = $[1];
     return t1;
