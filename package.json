@@ -32,7 +32,6 @@
     "@babel/core": "^7.24.5",
     "@babel/plugin-syntax-jsx": "^7.24.1",
     "@babel/plugin-syntax-typescript": "^7.24.1",
-    "babel-plugin-react-compiler": "^0.0.0-experimental-c23de8d-20240515",
     "loader-utils": "^3.2.1"
   },
   "devDependencies": {
@@ -46,6 +45,7 @@
     "@types/loader-utils": "^2.0.6",
     "@types/mocha": "^10.0.6",
     "@types/node": "^20.12.12",
+    "babel-plugin-react-compiler": "0.0.0-experimental-c23de8d-20240515",
     "browserslist": "^4.23.0",
     "bumpp": "^9.4.1",
     "chai": "^4.4.1",
