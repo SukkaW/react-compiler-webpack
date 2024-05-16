@@ -8,8 +8,6 @@ export interface ReactCompilerLoaderOption extends ReactCompilerConfig {
   babelTransFormOpt?: babel.TransformOptions
 }
 
-export const defineReactCompilerLoaderOption = (options: ReactCompilerLoaderOption) => options;
-
 const defaultBabelParsePlugins: NonNullable<NonNullable<babel.TransformOptions['parserOpts']>['plugins']> = ['jsx', 'typescript'];
 
 export default async function reactCompilerLoader(this: webpack.LoaderContext<ReactCompilerLoaderOption>, input: string, _inputSourceMap: any) {

@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`forgetti-loader (webpack) should optimize complex component 1`] = `
+"/******/ (() => { // webpackBootstrap
+/******/ 	var __webpack_modules__ = ({
+
+/***/ \\"./complex.tsx\\":
+/*!*********************!*\\\\
+  !*** ./complex.tsx ***!
+  \\\\*********************/
+/***/ (() => {
+
+throw new Error(\\"Module build failed (from ../../dist/index.js):\\\\nLoaderRunnerError: Module '/Users/sukka/Project/react-compiler-webpack/dist/index.js' is not a loader (must have normal or pitch function)\\\\n    at handleResult (/Users/sukka/Project/react-compiler-webpack/node_modules/.pnpm/loader-runner@4.3.0/node_modules/loader-runner/lib/loadLoader.js:49:19)\\\\n    at loadLoader (/Users/sukka/Project/react-compiler-webpack/node_modules/.pnpm/loader-runner@4.3.0/node_modules/loader-runner/lib/loadLoader.js:35:10)\\\\n    at iteratePitchingLoaders (/Users/sukka/Project/react-compiler-webpack/node_modules/.pnpm/loader-runner@4.3.0/node_modules/loader-runner/lib/LoaderRunner.js:182:2)\\\\n    at iteratePitchingLoaders (/Users/sukka/Project/react-compiler-webpack/node_modules/.pnpm/loader-runner@4.3.0/node_modules/loader-runner/lib/LoaderRunner.js:178:10)\\\\n    at /Users/sukka/Project/react-compiler-webpack/node_modules/.pnpm/loader-runner@4.3.0/node_modules/loader-runner/lib/LoaderRunner.js:189:18\\\\n    at handleResult (/Users/sukka/Project/react-compiler-webpack/node_modules/.pnpm/loader-runner@4.3.0/node_modules/loader-runner/lib/loadLoader.js:53:2)\\\\n    at loadLoader (/Users/sukka/Project/react-compiler-webpack/node_modules/.pnpm/loader-runner@4.3.0/node_modules/loader-runner/lib/loadLoader.js:35:10)\\\\n    at iteratePitchingLoaders (/Users/sukka/Project/react-compiler-webpack/node_modules/.pnpm/loader-runner@4.3.0/node_modules/loader-runner/lib/LoaderRunner.js:182:2)\\\\n    at runLoaders (/Users/sukka/Project/react-compiler-webpack/node_modules/.pnpm/loader-runner@4.3.0/node_modules/loader-runner/lib/LoaderRunner.js:398:2)\\\\n    at NormalModule._doBuild (/Users/sukka/Project/react-compiler-webpack/node_modules/.pnpm/webpack@5.91.0_@swc+core@1.5.7_@swc+helpers@0.5.5_/node_modules/webpack/lib/NormalModule.js:905:3)\\\\n    at NormalModule.build (/Users/sukka/Project/react-compiler-webpack/node_modules/.pnpm/webpack@5.91.0_@swc+core@1.5.7_@swc+helpers@0.5.5_/node_modules/webpack/lib/NormalModule.js:1081:15)\\\\n    at /Users/sukka/Project/react-compiler-webpack/node_modules/.pnpm/webpack@5.91.0_@swc+core@1.5.7_@swc+helpers@0.5.5_/node_modules/webpack/lib/Compilation.js:1400:12\\\\n    at NormalModule.needBuild (/Users/sukka/Project/react-compiler-webpack/node_modules/.pnpm/webpack@5.91.0_@swc+core@1.5.7_@swc+helpers@0.5.5_/node_modules/webpack/lib/NormalModule.js:1407:32)\\\\n    at Compilation._buildModule (/Users/sukka/Project/react-compiler-webpack/node_modules/.pnpm/webpack@5.91.0_@swc+core@1.5.7_@swc+helpers@0.5.5_/node_modules/webpack/lib/Compilation.js:1381:10)\\\\n    at /Users/sukka/Project/react-compiler-webpack/node_modules/.pnpm/webpack@5.91.0_@swc+core@1.5.7_@swc+helpers@0.5.5_/node_modules/webpack/lib/util/AsyncQueue.js:305:10\\\\n    at Hook.eval [as callAsync] (eval at create (/Users/sukka/Project/react-compiler-webpack/node_modules/.pnpm/tapable@2.2.1/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:6:1)\\\\n    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (/Users/sukka/Project/react-compiler-webpack/node_modules/.pnpm/tapable@2.2.1/node_modules/tapable/lib/Hook.js:18:14)\\\\n    at AsyncQueue._startProcessing (/Users/sukka/Project/react-compiler-webpack/node_modules/.pnpm/webpack@5.91.0_@swc+core@1.5.7_@swc+helpers@0.5.5_/node_modules/webpack/lib/util/AsyncQueue.js:295:26)\\\\n    at AsyncQueue._ensureProcessing (/Users/sukka/Project/react-compiler-webpack/node_modules/.pnpm/webpack@5.91.0_@swc+core@1.5.7_@swc+helpers@0.5.5_/node_modules/webpack/lib/util/AsyncQueue.js:282:12)\\\\n    at processImmediate (node:internal/timers:478:21)\\");
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module doesn't tell about it's top-level declarations so it can't be inlined
+/******/ 	var __webpack_exports__ = {};
+/******/ 	__webpack_modules__[\\"./complex.tsx\\"]();
+/******/ 	
+/******/ })()
+;"
+`;
+
+exports[`forgetti-loader (webpack) should work 1`] = `
+"/******/ (() => { // webpackBootstrap
+/******/ 	var __webpack_modules__ = ({
+
+/***/ \\"./simple.jsx\\":
+/*!********************!*\\\\
+  !*** ./simple.jsx ***!
+  \\\\********************/
+/***/ (() => {
+
+throw new Error(\\"Module build failed (from ../../dist/index.js):\\\\nLoaderRunnerError: Module '/Users/sukka/Project/react-compiler-webpack/dist/index.js' is not a loader (must have normal or pitch function)\\\\n    at handleResult (/Users/sukka/Project/react-compiler-webpack/node_modules/.pnpm/loader-runner@4.3.0/node_modules/loader-runner/lib/loadLoader.js:49:19)\\\\n    at loadLoader (/Users/sukka/Project/react-compiler-webpack/node_modules/.pnpm/loader-runner@4.3.0/node_modules/loader-runner/lib/loadLoader.js:35:10)\\\\n    at iteratePitchingLoaders (/Users/sukka/Project/react-compiler-webpack/node_modules/.pnpm/loader-runner@4.3.0/node_modules/loader-runner/lib/LoaderRunner.js:182:2)\\\\n    at iteratePitchingLoaders (/Users/sukka/Project/react-compiler-webpack/node_modules/.pnpm/loader-runner@4.3.0/node_modules/loader-runner/lib/LoaderRunner.js:178:10)\\\\n    at /Users/sukka/Project/react-compiler-webpack/node_modules/.pnpm/loader-runner@4.3.0/node_modules/loader-runner/lib/LoaderRunner.js:189:18\\\\n    at handleResult (/Users/sukka/Project/react-compiler-webpack/node_modules/.pnpm/loader-runner@4.3.0/node_modules/loader-runner/lib/loadLoader.js:53:2)\\\\n    at loadLoader (/Users/sukka/Project/react-compiler-webpack/node_modules/.pnpm/loader-runner@4.3.0/node_modules/loader-runner/lib/loadLoader.js:35:10)\\\\n    at iteratePitchingLoaders (/Users/sukka/Project/react-compiler-webpack/node_modules/.pnpm/loader-runner@4.3.0/node_modules/loader-runner/lib/LoaderRunner.js:182:2)\\\\n    at runLoaders (/Users/sukka/Project/react-compiler-webpack/node_modules/.pnpm/loader-runner@4.3.0/node_modules/loader-runner/lib/LoaderRunner.js:398:2)\\\\n    at NormalModule._doBuild (/Users/sukka/Project/react-compiler-webpack/node_modules/.pnpm/webpack@5.91.0_@swc+core@1.5.7_@swc+helpers@0.5.5_/node_modules/webpack/lib/NormalModule.js:905:3)\\\\n    at NormalModule.build (/Users/sukka/Project/react-compiler-webpack/node_modules/.pnpm/webpack@5.91.0_@swc+core@1.5.7_@swc+helpers@0.5.5_/node_modules/webpack/lib/NormalModule.js:1081:15)\\\\n    at /Users/sukka/Project/react-compiler-webpack/node_modules/.pnpm/webpack@5.91.0_@swc+core@1.5.7_@swc+helpers@0.5.5_/node_modules/webpack/lib/Compilation.js:1400:12\\\\n    at NormalModule.needBuild (/Users/sukka/Project/react-compiler-webpack/node_modules/.pnpm/webpack@5.91.0_@swc+core@1.5.7_@swc+helpers@0.5.5_/node_modules/webpack/lib/NormalModule.js:1407:32)\\\\n    at Compilation._buildModule (/Users/sukka/Project/react-compiler-webpack/node_modules/.pnpm/webpack@5.91.0_@swc+core@1.5.7_@swc+helpers@0.5.5_/node_modules/webpack/lib/Compilation.js:1381:10)\\\\n    at /Users/sukka/Project/react-compiler-webpack/node_modules/.pnpm/webpack@5.91.0_@swc+core@1.5.7_@swc+helpers@0.5.5_/node_modules/webpack/lib/util/AsyncQueue.js:305:10\\\\n    at Hook.eval [as callAsync] (eval at create (/Users/sukka/Project/react-compiler-webpack/node_modules/.pnpm/tapable@2.2.1/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:6:1)\\\\n    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (/Users/sukka/Project/react-compiler-webpack/node_modules/.pnpm/tapable@2.2.1/node_modules/tapable/lib/Hook.js:18:14)\\\\n    at AsyncQueue._startProcessing (/Users/sukka/Project/react-compiler-webpack/node_modules/.pnpm/webpack@5.91.0_@swc+core@1.5.7_@swc+helpers@0.5.5_/node_modules/webpack/lib/util/AsyncQueue.js:295:26)\\\\n    at AsyncQueue._ensureProcessing (/Users/sukka/Project/react-compiler-webpack/node_modules/.pnpm/webpack@5.91.0_@swc+core@1.5.7_@swc+helpers@0.5.5_/node_modules/webpack/lib/util/AsyncQueue.js:282:12)\\\\n    at processImmediate (node:internal/timers:478:21)\\");
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module doesn't tell about it's top-level declarations so it can't be inlined
+/******/ 	var __webpack_exports__ = {};
+/******/ 	__webpack_modules__[\\"./simple.jsx\\"]();
+/******/ 	
+/******/ })()
+;"
+`;
+
+exports[`forgetti-loader (webpack) should work with tsx 1`] = `
+"/******/ (() => { // webpackBootstrap
+/******/ 	var __webpack_modules__ = ({
+
+/***/ \\"./simple.tsx\\":
+/*!********************!*\\\\
+  !*** ./simple.tsx ***!
+  \\\\********************/
+/***/ (() => {
+
+throw new Error(\\"Module build failed (from ../../dist/index.js):\\\\nLoaderRunnerError: Module '/Users/sukka/Project/react-compiler-webpack/dist/index.js' is not a loader (must have normal or pitch function)\\\\n    at handleResult (/Users/sukka/Project/react-compiler-webpack/node_modules/.pnpm/loader-runner@4.3.0/node_modules/loader-runner/lib/loadLoader.js:49:19)\\\\n    at loadLoader (/Users/sukka/Project/react-compiler-webpack/node_modules/.pnpm/loader-runner@4.3.0/node_modules/loader-runner/lib/loadLoader.js:35:10)\\\\n    at iteratePitchingLoaders (/Users/sukka/Project/react-compiler-webpack/node_modules/.pnpm/loader-runner@4.3.0/node_modules/loader-runner/lib/LoaderRunner.js:182:2)\\\\n    at iteratePitchingLoaders (/Users/sukka/Project/react-compiler-webpack/node_modules/.pnpm/loader-runner@4.3.0/node_modules/loader-runner/lib/LoaderRunner.js:178:10)\\\\n    at /Users/sukka/Project/react-compiler-webpack/node_modules/.pnpm/loader-runner@4.3.0/node_modules/loader-runner/lib/LoaderRunner.js:189:18\\\\n    at handleResult (/Users/sukka/Project/react-compiler-webpack/node_modules/.pnpm/loader-runner@4.3.0/node_modules/loader-runner/lib/loadLoader.js:53:2)\\\\n    at loadLoader (/Users/sukka/Project/react-compiler-webpack/node_modules/.pnpm/loader-runner@4.3.0/node_modules/loader-runner/lib/loadLoader.js:35:10)\\\\n    at iteratePitchingLoaders (/Users/sukka/Project/react-compiler-webpack/node_modules/.pnpm/loader-runner@4.3.0/node_modules/loader-runner/lib/LoaderRunner.js:182:2)\\\\n    at runLoaders (/Users/sukka/Project/react-compiler-webpack/node_modules/.pnpm/loader-runner@4.3.0/node_modules/loader-runner/lib/LoaderRunner.js:398:2)\\\\n    at NormalModule._doBuild (/Users/sukka/Project/react-compiler-webpack/node_modules/.pnpm/webpack@5.91.0_@swc+core@1.5.7_@swc+helpers@0.5.5_/node_modules/webpack/lib/NormalModule.js:905:3)\\\\n    at NormalModule.build (/Users/sukka/Project/react-compiler-webpack/node_modules/.pnpm/webpack@5.91.0_@swc+core@1.5.7_@swc+helpers@0.5.5_/node_modules/webpack/lib/NormalModule.js:1081:15)\\\\n    at /Users/sukka/Project/react-compiler-webpack/node_modules/.pnpm/webpack@5.91.0_@swc+core@1.5.7_@swc+helpers@0.5.5_/node_modules/webpack/lib/Compilation.js:1400:12\\\\n    at NormalModule.needBuild (/Users/sukka/Project/react-compiler-webpack/node_modules/.pnpm/webpack@5.91.0_@swc+core@1.5.7_@swc+helpers@0.5.5_/node_modules/webpack/lib/NormalModule.js:1407:32)\\\\n    at Compilation._buildModule (/Users/sukka/Project/react-compiler-webpack/node_modules/.pnpm/webpack@5.91.0_@swc+core@1.5.7_@swc+helpers@0.5.5_/node_modules/webpack/lib/Compilation.js:1381:10)\\\\n    at /Users/sukka/Project/react-compiler-webpack/node_modules/.pnpm/webpack@5.91.0_@swc+core@1.5.7_@swc+helpers@0.5.5_/node_modules/webpack/lib/util/AsyncQueue.js:305:10\\\\n    at Hook.eval [as callAsync] (eval at create (/Users/sukka/Project/react-compiler-webpack/node_modules/.pnpm/tapable@2.2.1/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:6:1)\\\\n    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (/Users/sukka/Project/react-compiler-webpack/node_modules/.pnpm/tapable@2.2.1/node_modules/tapable/lib/Hook.js:18:14)\\\\n    at AsyncQueue._startProcessing (/Users/sukka/Project/react-compiler-webpack/node_modules/.pnpm/webpack@5.91.0_@swc+core@1.5.7_@swc+helpers@0.5.5_/node_modules/webpack/lib/util/AsyncQueue.js:295:26)\\\\n    at AsyncQueue._ensureProcessing (/Users/sukka/Project/react-compiler-webpack/node_modules/.pnpm/webpack@5.91.0_@swc+core@1.5.7_@swc+helpers@0.5.5_/node_modules/webpack/lib/util/AsyncQueue.js:282:12)\\\\n    at processImmediate (node:internal/timers:478:21)\\");
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module doesn't tell about it's top-level declarations so it can't be inlined
+/******/ 	var __webpack_exports__ = {};
+/******/ 	__webpack_modules__[\\"./simple.tsx\\"]();
+/******/ 	
+/******/ })()
+;"
+`;
