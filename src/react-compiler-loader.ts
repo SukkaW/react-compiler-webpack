@@ -22,7 +22,11 @@ export default async function reactCompilerLoader(this: webpack.LoaderContext<Re
       ...babelTransFormOpt,
       // override babel plugins
       plugins: [
-        [BabelPluginReactCompiler, reactCompilerConfig],
+        [BabelPluginReactCompiler, {
+          ...reactCompilerConfig,
+          // Always override filename to the current file
+          filename: this.resourcePath
+        }],
         ...(babelTransFormOpt?.plugins || [])
       ],
       // override babel parserOpts

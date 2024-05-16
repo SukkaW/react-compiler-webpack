@@ -11,7 +11,7 @@ type RuleOptions = Omit<RuleSetRule, 'use'>;
 
 export const defineReactCompilerLoaderOption = (options: ReactCompilerLoaderOption) => options;
 
-export function withNext(pluginOptions: ReactCompilerLoaderOption = {}, ruleOptions: RuleOptions = {}) {
+export function withNext(pluginOptions?: ReactCompilerLoaderOption, ruleOptions: RuleOptions = {}) {
   return (nextConfig: NextConfig = {}) => {
     const $ruleOptions: RuleOptions = {
       test: /\.(mtsx|mjsx|tsx|jsx)$/,

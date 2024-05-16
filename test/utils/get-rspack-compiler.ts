@@ -6,9 +6,11 @@ import { createFsFromVolume, Volume } from 'memfs';
 import type { RspackOptions } from '@rspack/core';
 import { externalModules } from './get-webpack-compiler';
 
-import { reactCompilerLoader, type ReactCompilerLoaderOption } from '../../src';
+import type { ReactCompilerLoaderOption } from '../../src';
 
-export default (fixture: string, loaderOptions: ReactCompilerLoaderOption = {}, config: RspackOptions = {}) => {
+import { reactCompilerLoader } from '../../dist';
+
+export default (fixture: string, loaderOptions?: ReactCompilerLoaderOption, config: RspackOptions = {}) => {
   process.env.RSPACK_CONFIG_VALIDATE = 'loose';
   const fullConfig: RspackOptions = {
     mode: 'development',

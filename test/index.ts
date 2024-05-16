@@ -12,9 +12,13 @@ import getModuleSource from './utils/get-module-source';
 chai.should();
 chai.use(jestSnapshotPlugin());
 
+const defaultOption = defineReactCompilerLoaderOption({
+  sources() { return true; }
+});
+
 ([
-  ['forgetti-loader (webpack)', getWebpackCompiler],
-  ['forgetti-loader (rspack)', getRspackCompiler]
+  ['react-compiler-webpack (webpack)', getWebpackCompiler],
+  ['react-compiler-webpack (rspack)', getRspackCompiler]
 ] as const).forEach(([name, getCompiler]) => {
   describe(name, () => {
     it('defineForgettiLoaderOptions', () => {
@@ -25,21 +29,21 @@ chai.use(jestSnapshotPlugin());
     });
 
     it('should work', async () => {
-      const [compiler, fs] = getCompiler('./simple.jsx');
+      const [compiler, fs] = getCompiler('./simple.jsx', defaultOption);
       const stats = await compile(compiler);
 
       getModuleSource('./simple.jsx', stats, fs)?.should.toMatchSnapshot('simple.jsx');
     });
 
     it('should work with tsx', async () => {
-      const [compiler, fs] = getCompiler('./simple.tsx');
+      const [compiler, fs] = getCompiler('./simple.tsx', defaultOption);
       const stats = await compile(compiler);
 
       getModuleSource('./simple.tsx', stats, fs)?.should.toMatchSnapshot('simple.tsx');
     });
 
     it('should optimize complex component', async () => {
-      const [compiler, fs] = getCompiler('./complex.tsx');
+      const [compiler, fs] = getCompiler('./complex.tsx', defaultOption);
       const stats = await compile(compiler);
 
       getModuleSource('./complex.tsx', stats, fs)?.should.toMatchSnapshot('complex.tsx');

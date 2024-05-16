@@ -9,6 +9,8 @@ import pkgJson from '../../package.json';
 import { builtinModules } from 'module';
 import type { Options as SwcOptions } from '@swc/core';
 
+import { reactCompilerLoader } from '../../dist';
+
 export const externalModules = Object.keys(pkgJson.dependencies)
   .concat(Object.keys(pkgJson.peerDependencies))
   .concat(builtinModules)
@@ -38,7 +40,7 @@ const useSwcLoader = (isTSX: boolean) => ({
   } satisfies SwcOptions
 });
 
-export default (fixture: string, loaderOptions: ReactCompilerLoaderOption = {}, config: webpack.Configuration = {}) => {
+export default (fixture: string, loaderOptions?: ReactCompilerLoaderOption, config: webpack.Configuration = {}) => {
   const fullConfig: webpack.Configuration = {
     mode: 'development',
     target: 'web',
@@ -62,7 +64,7 @@ export default (fixture: string, loaderOptions: ReactCompilerLoaderOption = {}, 
           use: [
             useSwcLoader(false),
             {
-              loader: path.resolve(__dirname, '../../dist/index.js'),
+              loader: reactCompilerLoader,
               options: loaderOptions
             }
           ]
@@ -73,7 +75,7 @@ export default (fixture: string, loaderOptions: ReactCompilerLoaderOption = {}, 
           use: [
             useSwcLoader(true),
             {
-              loader: path.resolve(__dirname, '../../dist/index.js'),
+              loader: reactCompilerLoader,
               options: loaderOptions
             }
           ]
