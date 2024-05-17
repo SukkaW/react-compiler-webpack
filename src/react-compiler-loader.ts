@@ -19,6 +19,16 @@ export default async function reactCompilerLoader(this: webpack.LoaderContext<Re
 
     const result = await babel.transformAsync(input, {
       filename: this.resourcePath,
+      cloneInputAst: false,
+      generatorOpts: {
+        ...babelTransFormOpt?.generatorOpts,
+        // https://github.com/facebook/react/issues/29120
+        // TODO: remove once React Compiler has provided their workaround
+        jsescOption: {
+          minimal: true,
+          ...babelTransFormOpt?.generatorOpts?.jsescOption
+        }
+      },
       // user configured babel option
       ...babelTransFormOpt,
       // override babel plugins

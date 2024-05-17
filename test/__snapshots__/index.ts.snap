@@ -1,5 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`react-compiler-webpack (rspack) facebook/react issue #29120 1`] = `
+"import { jsx as _jsx } from \\"react/jsx-runtime\\";
+import { c as _c } from \\"react/compiler-runtime\\";
+// https://github.com/facebook/react/issues/29120
+export default function Comp() {
+    const $ = _c(1);
+    let t0;
+    if ($[0] === Symbol.for(\\"react.memo_cache_sentinel\\")) {
+        t0 = /*#__PURE__*/ _jsx(\\"div\\", {
+            \\"aria-label\\": \\"我能吞下玻璃而不伤身体\\",
+            children: \\"我能吞下玻璃而不伤身体\\"
+        });
+        $[0] = t0;
+    } else t0 = $[0];
+    return t0;
+}
+"
+`;
+
 exports[`react-compiler-webpack (rspack) should optimize complex component 1`] = `
 "import { jsx as _jsx, jsxs as _jsxs } from \\"react/jsx-runtime\\";
 import { c as _c } from \\"react/compiler-runtime\\";
@@ -160,6 +179,27 @@ export const AnotherExmaple = ()=>{
     } else t1 = $[1];
     return t1;
 };
+"
+`;
+
+exports[`react-compiler-webpack (webpack) facebook/react issue #29120 1`] = `
+"import { jsx as _jsx } from \\"react/jsx-runtime\\";
+import { c as _c } from \\"react/compiler-runtime\\";
+// https://github.com/facebook/react/issues/29120
+export default function Comp() {
+    const $ = _c(1);
+    let t0;
+    if ($[0] === Symbol.for(\\"react.memo_cache_sentinel\\")) {
+        t0 = /*#__PURE__*/ _jsx(\\"div\\", {
+            \\"aria-label\\": \\"我能吞下玻璃而不伤身体\\",
+            children: \\"我能吞下玻璃而不伤身体\\"
+        });
+        $[0] = t0;
+    } else {
+        t0 = $[0];
+    }
+    return t0;
+}
 "
 `;
 

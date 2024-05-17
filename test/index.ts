@@ -48,5 +48,13 @@ const defaultOption = defineReactCompilerLoaderOption({
 
       getModuleSource('./complex.tsx', stats, fs)?.should.toMatchSnapshot('complex.tsx');
     });
+
+    // https://github.com/facebook/react/issues/29120
+    it('facebook/react issue #29120', async () => {
+      const [compiler, fs] = getCompiler('./cjk.tsx', defaultOption);
+      const stats = await compile(compiler);
+
+      getModuleSource('./cjk.tsx', stats, fs)?.should.toMatchSnapshot('cjk.tsx');
+    });
   });
 });
