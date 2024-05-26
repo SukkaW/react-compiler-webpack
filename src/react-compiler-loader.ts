@@ -18,6 +18,7 @@ export default async function reactCompilerLoader(this: webpack.LoaderContext<Re
     const { babelTransFormOpt, ...reactCompilerConfig } = this.getOptions();
 
     const result = await babel.transformAsync(input, {
+      sourceFileName: this.resourcePath,
       filename: this.resourcePath,
       cloneInputAst: false,
       generatorOpts: {
