@@ -29,29 +29,29 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@babel/core": "^7.24.6",
-    "@babel/plugin-syntax-jsx": "^7.24.6",
-    "@babel/plugin-syntax-typescript": "^7.24.6",
-    "loader-utils": "^3.2.2"
+    "@babel/core": "^7.24.7",
+    "@babel/plugin-syntax-jsx": "^7.24.7",
+    "@babel/plugin-syntax-typescript": "^7.24.7",
+    "loader-utils": "^3.3.1"
   },
   "devDependencies": {
-    "@eslint-sukka/node": "^6.0.0-beta.11",
-    "@eslint-sukka/ts": "^6.0.0-beta.11",
-    "@rspack/core": "^0.7.0",
-    "@swc-node/register": "^1.9.1",
-    "@swc/core": "^1.5.24",
+    "@eslint-sukka/node": "^6.0.0-beta.21",
+    "@eslint-sukka/ts": "^6.0.0-beta.21",
+    "@rspack/core": "^0.7.1",
+    "@swc-node/register": "^1.9.2",
+    "@swc/core": "^1.5.27",
     "@types/babel__core": "^7.20.5",
     "@types/chai": "^4.3.16",
     "@types/loader-utils": "^2.0.6",
     "@types/mocha": "^10.0.6",
-    "@types/node": "^20.14.1",
+    "@types/node": "^20.14.2",
     "babel-plugin-react-compiler": "0.0.0-experimental-c23de8d-20240515",
-    "browserslist": "^4.23.0",
+    "browserslist": "^4.23.1",
     "bumpp": "^9.4.1",
     "chai": "^4.4.1",
     "eslint": "^9.4.0",
-    "eslint-config-sukka": "^6.0.0-beta.11",
-    "eslint-formatter-sukka": "^6.0.0-beta.11",
+    "eslint-config-sukka": "^6.0.0-beta.21",
+    "eslint-formatter-sukka": "^6.0.0-beta.21",
     "memfs": "^5.0.0-next.1",
     "mocha": "^10.4.0",
     "mocha-chai-jest-snapshot": "^1.1.4",
@@ -69,7 +69,7 @@
   "peerDependencies": {
     "babel-plugin-react-compiler": "*"
   },
-  "packageManager": "pnpm@9.1.4",
+  "packageManager": "pnpm@9.3.0",
   "overrides": {
     "hasown": "npm:@nolyfill/hasown@latest",
     "chai": "$chai"
