@@ -4,7 +4,7 @@ import { dts } from 'rollup-plugin-dts';
 import copy from 'rollup-plugin-copy';
 
 import pkgJson from './package.json';
-import { builtinModules } from 'module';
+import { builtinModules } from 'node:module';
 
 const externalModules = Object.keys(pkgJson.dependencies)
   .concat(Object.keys(pkgJson.peerDependencies))

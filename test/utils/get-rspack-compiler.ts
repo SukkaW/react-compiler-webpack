@@ -1,4 +1,5 @@
-import path from 'path';
+import path from 'node:path';
+import process from 'node:process';
 
 import { rspack } from '@rspack/core';
 import { createFsFromVolume, Volume } from 'memfs';

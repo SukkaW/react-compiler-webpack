@@ -1,4 +1,4 @@
-import path from 'path';
+import path from 'node:path';
 
 import webpack from 'webpack';
 import { createFsFromVolume, Volume } from 'memfs';
@@ -6,7 +6,7 @@ import { createFsFromVolume, Volume } from 'memfs';
 import type { ReactCompilerLoaderOption } from '../../src';
 
 import pkgJson from '../../package.json';
-import { builtinModules } from 'module';
+import { builtinModules } from 'node:module';
 import { useSwcLoader } from './get-swc-loader';
 
 import { reactCompilerLoader } from '../../dist';

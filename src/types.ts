@@ -1,5 +1,5 @@
 export interface ReactCompilerConfig {
-  environment?: {},
+  environment?: any,
 
   /*
    * Specifying a `gating` config, makes Forget compile and emit a separate
