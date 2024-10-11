@@ -23,97 +23,37 @@ export default function Comp() {
 
 exports[`react-compiler-webpack (rspack) should optimize complex component 1`] = `
 "import { jsx as _jsx, jsxs as _jsxs } from \\"react/jsx-runtime\\";
-import { c as _c } from \\"react/compiler-runtime\\";
-import { useState, useRef } from 'react';
+import { useState, useRef, useCallback } from 'react';
 export default function Sukka() {
-    const $ = _c(13);
     const [count, setCount] = useState(0);
     const singletonRef = useRef(null);
     if (!singletonRef.current) {
         singletonRef.current = new AbortController();
     }
-    let t0;
-    if ($[0] === Symbol.for(\\"react.memo_cache_sentinel\\")) {
-        t0 = ()=>setCount((count_0)=>count_0 + 1);
-        $[0] = t0;
-    } else {
-        t0 = $[0];
-    }
-    const handleButtonClick = t0;
-    if (count > 10) {
-        return null;
-    }
-    let t1;
-    if ($[1] !== count) {
-        t1 = /*#__PURE__*/ _jsxs(\\"p\\", {
-            children: [
-                \\"Count: \\",
-                count
-            ]
-        });
-        $[1] = count;
-        $[2] = t1;
-    } else {
-        t1 = $[2];
-    }
-    let t2;
-    if ($[3] === Symbol.for(\\"react.memo_cache_sentinel\\")) {
-        t2 = /*#__PURE__*/ _jsx(\\"button\\", {
-            onClick: handleButtonClick,
-            children: \\"Increment\\"
-        });
-        $[3] = t2;
-    } else {
-        t2 = $[3];
-    }
-    let t3;
-    if ($[4] !== count) {
-        t3 = count > 10 && /*#__PURE__*/ _jsx(\\"p\\", {
-            children: \\"Count is higher than 10\\"
-        });
-        $[4] = count;
-        $[5] = t3;
-    } else {
-        t3 = $[5];
-    }
-    const t4 = count > 0;
-    let t5;
-    if ($[6] === Symbol.for(\\"react.memo_cache_sentinel\\")) {
-        t5 = ()=>setCount(0);
-        $[6] = t5;
-    } else {
-        t5 = $[6];
-    }
-    let t6;
-    if ($[7] !== t4) {
-        t6 = /*#__PURE__*/ _jsx(\\"button\\", {
-            disabled: t4,
-            onClick: t5,
-            children: \\"Reset Count\\"
-        });
-        $[7] = t4;
-        $[8] = t6;
-    } else {
-        t6 = $[8];
-    }
-    let t7;
-    if ($[9] !== t1 || $[10] !== t3 || $[11] !== t6) {
-        t7 = /*#__PURE__*/ _jsxs(\\"div\\", {
-            children: [
-                t1,
-                t2,
-                t3,
-                t6
-            ]
-        });
-        $[9] = t1;
-        $[10] = t3;
-        $[11] = t6;
-        $[12] = t7;
-    } else {
-        t7 = $[12];
-    }
-    return t7;
+    const handleButtonClick = useCallback(()=>setCount((count_0)=>count_0 + 1), []);
+    if (count > 10) return null;
+    return /*#__PURE__*/ _jsxs(\\"div\\", {
+        children: [
+            /*#__PURE__*/ _jsxs(\\"p\\", {
+                children: [
+                    \\"Count: \\",
+                    count
+                ]
+            }),
+            /*#__PURE__*/ _jsx(\\"button\\", {
+                onClick: handleButtonClick,
+                children: \\"Increment\\"
+            }),
+            count > 10 && /*#__PURE__*/ _jsx(\\"p\\", {
+                children: \\"Count is higher than 10\\"
+            }),
+            /*#__PURE__*/ _jsx(\\"button\\", {
+                disabled: count > 0,
+                onClick: ()=>setCount(0),
+                children: \\"Reset Count\\"
+            })
+        ]
+    });
 }
 "
 `;
@@ -122,32 +62,28 @@ exports[`react-compiler-webpack (rspack) should work 1`] = `
 "import { jsx as _jsx } from \\"react/jsx-runtime\\";
 import { c as _c } from \\"react/compiler-runtime\\";
 export default function Example() {
-    const $ = _c(2);
+    const $ = _c(1);
     let t0;
     if ($[0] === Symbol.for(\\"react.memo_cache_sentinel\\")) {
-        t0 = [
+        const value = [
             1,
             2,
             3,
             4
         ];
+        t0 = /*#__PURE__*/ _jsx(\\"div\\", {
+            children: value.map(_temp)
+        });
         $[0] = t0;
     } else {
         t0 = $[0];
     }
-    const value = t0;
-    let t1;
-    if ($[1] === Symbol.for(\\"react.memo_cache_sentinel\\")) {
-        t1 = /*#__PURE__*/ _jsx(\\"div\\", {
-            children: value.map((i)=>/*#__PURE__*/ _jsx(\\"p\\", {
-                    children: i
-                }, i))
-        });
-        $[1] = t1;
-    } else {
-        t1 = $[1];
-    }
-    return t1;
+    return t0;
+}
+function _temp(i) {
+    return /*#__PURE__*/ _jsx(\\"p\\", {
+        children: i
+    }, i);
 }
 "
 `;
@@ -173,15 +109,18 @@ export default function Example() {
     let t1;
     if ($[1] === Symbol.for(\\"react.memo_cache_sentinel\\")) {
         t1 = /*#__PURE__*/ _jsx(\\"div\\", {
-            children: value.map((i)=>/*#__PURE__*/ _jsx(\\"p\\", {
-                    children: i
-                }, i))
+            children: value.map(_temp)
         });
         $[1] = t1;
     } else {
         t1 = $[1];
     }
     return t1;
+}
+function _temp(i) {
+    return /*#__PURE__*/ _jsx(\\"p\\", {
+        children: i
+    }, i);
 }
 export const AnotherExmaple = ()=>{
     const $ = _c(2);
@@ -201,9 +140,7 @@ export const AnotherExmaple = ()=>{
     let t1;
     if ($[1] === Symbol.for(\\"react.memo_cache_sentinel\\")) {
         t1 = /*#__PURE__*/ _jsx(\\"div\\", {
-            children: value.map((i)=>/*#__PURE__*/ _jsx(\\"p\\", {
-                    children: i
-                }, i))
+            children: value.map(_temp2)
         });
         $[1] = t1;
     } else {
@@ -211,6 +148,11 @@ export const AnotherExmaple = ()=>{
     }
     return t1;
 };
+function _temp2(i) {
+    return /*#__PURE__*/ _jsx(\\"p\\", {
+        children: i
+    }, i);
+}
 "
 `;
 
@@ -237,97 +179,37 @@ export default function Comp() {
 
 exports[`react-compiler-webpack (webpack) should optimize complex component 1`] = `
 "import { jsx as _jsx, jsxs as _jsxs } from \\"react/jsx-runtime\\";
-import { c as _c } from \\"react/compiler-runtime\\";
-import { useState, useRef } from 'react';
+import { useState, useRef, useCallback } from 'react';
 export default function Sukka() {
-    const $ = _c(13);
     const [count, setCount] = useState(0);
     const singletonRef = useRef(null);
     if (!singletonRef.current) {
         singletonRef.current = new AbortController();
     }
-    let t0;
-    if ($[0] === Symbol.for(\\"react.memo_cache_sentinel\\")) {
-        t0 = ()=>setCount((count_0)=>count_0 + 1);
-        $[0] = t0;
-    } else {
-        t0 = $[0];
-    }
-    const handleButtonClick = t0;
-    if (count > 10) {
-        return null;
-    }
-    let t1;
-    if ($[1] !== count) {
-        t1 = /*#__PURE__*/ _jsxs(\\"p\\", {
-            children: [
-                \\"Count: \\",
-                count
-            ]
-        });
-        $[1] = count;
-        $[2] = t1;
-    } else {
-        t1 = $[2];
-    }
-    let t2;
-    if ($[3] === Symbol.for(\\"react.memo_cache_sentinel\\")) {
-        t2 = /*#__PURE__*/ _jsx(\\"button\\", {
-            onClick: handleButtonClick,
-            children: \\"Increment\\"
-        });
-        $[3] = t2;
-    } else {
-        t2 = $[3];
-    }
-    let t3;
-    if ($[4] !== count) {
-        t3 = count > 10 && /*#__PURE__*/ _jsx(\\"p\\", {
-            children: \\"Count is higher than 10\\"
-        });
-        $[4] = count;
-        $[5] = t3;
-    } else {
-        t3 = $[5];
-    }
-    const t4 = count > 0;
-    let t5;
-    if ($[6] === Symbol.for(\\"react.memo_cache_sentinel\\")) {
-        t5 = ()=>setCount(0);
-        $[6] = t5;
-    } else {
-        t5 = $[6];
-    }
-    let t6;
-    if ($[7] !== t4) {
-        t6 = /*#__PURE__*/ _jsx(\\"button\\", {
-            disabled: t4,
-            onClick: t5,
-            children: \\"Reset Count\\"
-        });
-        $[7] = t4;
-        $[8] = t6;
-    } else {
-        t6 = $[8];
-    }
-    let t7;
-    if ($[9] !== t1 || $[10] !== t3 || $[11] !== t6) {
-        t7 = /*#__PURE__*/ _jsxs(\\"div\\", {
-            children: [
-                t1,
-                t2,
-                t3,
-                t6
-            ]
-        });
-        $[9] = t1;
-        $[10] = t3;
-        $[11] = t6;
-        $[12] = t7;
-    } else {
-        t7 = $[12];
-    }
-    return t7;
+    const handleButtonClick = useCallback(()=>setCount((count_0)=>count_0 + 1), []);
+    if (count > 10) return null;
+    return /*#__PURE__*/ _jsxs(\\"div\\", {
+        children: [
+            /*#__PURE__*/ _jsxs(\\"p\\", {
+                children: [
+                    \\"Count: \\",
+                    count
+                ]
+            }),
+            /*#__PURE__*/ _jsx(\\"button\\", {
+                onClick: handleButtonClick,
+                children: \\"Increment\\"
+            }),
+            count > 10 && /*#__PURE__*/ _jsx(\\"p\\", {
+                children: \\"Count is higher than 10\\"
+            }),
+            /*#__PURE__*/ _jsx(\\"button\\", {
+                disabled: count > 0,
+                onClick: ()=>setCount(0),
+                children: \\"Reset Count\\"
+            })
+        ]
+    });
 }
 "
 `;
@@ -336,32 +218,28 @@ exports[`react-compiler-webpack (webpack) should work 1`] = `
 "import { jsx as _jsx } from \\"react/jsx-runtime\\";
 import { c as _c } from \\"react/compiler-runtime\\";
 export default function Example() {
-    const $ = _c(2);
+    const $ = _c(1);
     let t0;
     if ($[0] === Symbol.for(\\"react.memo_cache_sentinel\\")) {
-        t0 = [
+        const value = [
             1,
             2,
             3,
             4
         ];
+        t0 = /*#__PURE__*/ _jsx(\\"div\\", {
+            children: value.map(_temp)
+        });
         $[0] = t0;
     } else {
         t0 = $[0];
     }
-    const value = t0;
-    let t1;
-    if ($[1] === Symbol.for(\\"react.memo_cache_sentinel\\")) {
-        t1 = /*#__PURE__*/ _jsx(\\"div\\", {
-            children: value.map((i)=>/*#__PURE__*/ _jsx(\\"p\\", {
-                    children: i
-                }, i))
-        });
-        $[1] = t1;
-    } else {
-        t1 = $[1];
-    }
-    return t1;
+    return t0;
+}
+function _temp(i) {
+    return /*#__PURE__*/ _jsx(\\"p\\", {
+        children: i
+    }, i);
 }
 "
 `;
@@ -387,15 +265,18 @@ export default function Example() {
     let t1;
     if ($[1] === Symbol.for(\\"react.memo_cache_sentinel\\")) {
         t1 = /*#__PURE__*/ _jsx(\\"div\\", {
-            children: value.map((i)=>/*#__PURE__*/ _jsx(\\"p\\", {
-                    children: i
-                }, i))
+            children: value.map(_temp)
         });
         $[1] = t1;
     } else {
         t1 = $[1];
     }
     return t1;
+}
+function _temp(i) {
+    return /*#__PURE__*/ _jsx(\\"p\\", {
+        children: i
+    }, i);
 }
 export const AnotherExmaple = ()=>{
     const $ = _c(2);
@@ -415,9 +296,7 @@ export const AnotherExmaple = ()=>{
     let t1;
     if ($[1] === Symbol.for(\\"react.memo_cache_sentinel\\")) {
         t1 = /*#__PURE__*/ _jsx(\\"div\\", {
-            children: value.map((i)=>/*#__PURE__*/ _jsx(\\"p\\", {
-                    children: i
-                }, i))
+            children: value.map(_temp2)
         });
         $[1] = t1;
     } else {
@@ -425,5 +304,10 @@ export const AnotherExmaple = ()=>{
     }
     return t1;
 };
+function _temp2(i) {
+    return /*#__PURE__*/ _jsx(\\"p\\", {
+        children: i
+    }, i);
+}
 "
 `;

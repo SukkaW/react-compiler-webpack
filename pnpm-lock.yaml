@@ -49,8 +49,8 @@ importers:
         specifier: ^22.7.5
         version: 22.7.5
       babel-plugin-react-compiler:
-        specifier: 0.0.0-experimental-c23de8d-20240515
-        version: 0.0.0-experimental-c23de8d-20240515
+        specifier: 0.0.0-experimental-e504e66-20241010
+        version: 0.0.0-experimental-e504e66-20241010
       browserslist:
         specifier: ^4.24.0
         version: 4.24.0
@@ -1222,8 +1222,8 @@ packages:
     resolution: {integrity: sha512-Y1IQok9821cC9onCx5otgFfRm7Lm+I+wwxOx738M/WLPZ9Q42m4IG5W0FNX8WLL2gYMZo3JkuXIH2DOpWM+qwA==}
     engines: {node: '>=8'}
 
-  babel-plugin-react-compiler@0.0.0-experimental-c23de8d-20240515:
-    resolution: {integrity: sha512-0XN2gmpT55QtAz5n7d5g91y1AuO9tRhWBaLgCRyc4ExHrlr7+LfxW+YTb3mOwxngkkiggwM8HyYsaEK9MqhnlQ==}
+  babel-plugin-react-compiler@0.0.0-experimental-e504e66-20241010:
+    resolution: {integrity: sha512-hjASc3uqaXZGvxNkFaGrD6zzhn0t41tpmqWasxiGuvflCHEYgFoaPNi5wRzbZifo9RuYrwgUMTJRr9kh4cMsDg==}
 
   babel-preset-current-node-syntax@1.1.0:
     resolution: {integrity: sha512-ldYss8SbBlWva1bs28q78Ju5Zq1F+8BrqBZZ0VFhLBvhh6lCpC2o3gDJi/5DRLs9FgYZCnmPYIVFU4lRXCkyUw==}
@@ -2835,7 +2835,7 @@ snapshots:
 
   '@babel/generator@7.2.0':
     dependencies:
-      '@babel/types': 7.24.5
+      '@babel/types': 7.25.8
       jsesc: 2.5.2
       lodash: 4.17.21
       source-map: 0.5.7
@@ -3993,10 +3993,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  babel-plugin-react-compiler@0.0.0-experimental-c23de8d-20240515:
+  babel-plugin-react-compiler@0.0.0-experimental-e504e66-20241010:
     dependencies:
       '@babel/generator': 7.2.0
-      '@babel/types': 7.24.5
+      '@babel/types': 7.25.8
       chalk: 4.1.2
       invariant: 2.2.4
       pretty-format: 24.9.0

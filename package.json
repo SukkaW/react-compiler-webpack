@@ -44,7 +44,7 @@
     "@types/loader-utils": "^2.0.6",
     "@types/mocha": "^10.0.9",
     "@types/node": "^22.7.5",
-    "babel-plugin-react-compiler": "0.0.0-experimental-c23de8d-20240515",
+    "babel-plugin-react-compiler": "0.0.0-experimental-e504e66-20241010",
     "browserslist": "^4.24.0",
     "bumpp": "^9.7.1",
     "chai": "^4.5.0",
