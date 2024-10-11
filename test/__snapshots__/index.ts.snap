@@ -9,7 +9,7 @@ export default function Comp() {
     let t0;
     if ($[0] === Symbol.for(\\"react.memo_cache_sentinel\\")) {
         t0 = /*#__PURE__*/ _jsx(\\"div\\", {
-            \\"aria-label\\": \\"我能吞下玻璃而不伤身体\\",
+            \\"aria-label\\": \\"\\\\u6211\\\\u80FD\\\\u541E\\\\u4E0B\\\\u73BB\\\\u7483\\\\u800C\\\\u4E0D\\\\u4F24\\\\u8EAB\\\\u4F53\\",
             children: \\"我能吞下玻璃而不伤身体\\"
         });
         $[0] = t0;
@@ -165,7 +165,7 @@ export default function Comp() {
     let t0;
     if ($[0] === Symbol.for(\\"react.memo_cache_sentinel\\")) {
         t0 = /*#__PURE__*/ _jsx(\\"div\\", {
-            \\"aria-label\\": \\"我能吞下玻璃而不伤身体\\",
+            \\"aria-label\\": \\"\\\\u6211\\\\u80FD\\\\u541E\\\\u4E0B\\\\u73BB\\\\u7483\\\\u800C\\\\u4E0D\\\\u4F24\\\\u8EAB\\\\u4F53\\",
             children: \\"我能吞下玻璃而不伤身体\\"
         });
         $[0] = t0;
