@@ -26,24 +26,22 @@ const { defineReactCompilerLoaderOption, reactCompilerLoader } = require('react-
 module.exports = {
   module: {
     rules: [
-      rules: [
-        {
-          test: /\.[mc]?[jt]sx$/i,
-          exclude: /node_modules/,
-          use: [
-            // babel-loader, swc-loader, esbuild-loader, or anything you like to transpile JSX should go here.
-            // If you are using rspack, the rspack's buiilt-in react transformation is sufficient.
-            // { loader: 'swc-loader' },
-            // Now add forgetti-loader
-            {
-              loader: reactCompilerLoader,
-              options: defineReactCompilerLoaderOption({
-                // React Compiler options goes here
-              })
-            }
-          ]
-        }
-      ]
+      {
+        test: /\.[mc]?[jt]sx$/i,
+        exclude: /node_modules/,
+        use: [
+          // babel-loader, swc-loader, esbuild-loader, or anything you like to transpile JSX should go here.
+          // If you are using rspack, the rspack's buiilt-in react transformation is sufficient.
+          // { loader: 'swc-loader' },
+          // Now add forgetti-loader
+          {
+            loader: reactCompilerLoader,
+            options: defineReactCompilerLoaderOption({
+              // React Compiler options goes here
+            })
+          }
+        ]
+      }
     ]
   }
 };
@@ -51,7 +49,7 @@ module.exports = {
 
 ### Next.js
 
-Next.js has already intergrated the React Compiler and can be enabled with the following configuration:
+Next.js has already integrated the React Compiler and can be enabled with the following configuration:
 
 ```js
 // next.config.js
@@ -62,7 +60,7 @@ module.exports = {
 }
 ```
 
-Using Next.js built-in React Compiler intergration is highly recommended. But if you insist on going with `react-compiler-webpack`, you can follow use the provided Next.js plugin:
+Using Next.js built-in React Compiler integration is highly recommended. But if you insist on going with `react-compiler-webpack`, you can follow use the provided Next.js plugin:
 
 ```js
 // next.config.js
