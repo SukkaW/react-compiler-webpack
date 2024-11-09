@@ -84,5 +84,13 @@ export interface ReactCompilerConfig {
    */
   ignoreUseNoForget?: boolean,
 
-  sources?: string[] | ((filename: string) => boolean) | null
+  sources?: string[] | ((filename: string) => boolean) | null,
+
+  /*
+   * The minimum major version of React that the compiler should emit code for. If the target is 19
+   * or higher, the compiler emits direct imports of React runtime APIs needed by the compiler. On
+   * versions prior to 19, an extra runtime package react-compiler-runtime is necessary to provide
+   * a userspace approximation of runtime APIs.
+   */
+  target?:  '17' | '18' | '19' | (string & {})
 };
