@@ -92,5 +92,5 @@ export interface ReactCompilerConfig {
    * versions prior to 19, an extra runtime package react-compiler-runtime is necessary to provide
    * a userspace approximation of runtime APIs.
    */
-  target?:  '17' | '18' | '19'
+  target?:  '17' | '18' | '19' | (string & {})
 };
