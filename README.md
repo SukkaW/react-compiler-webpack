@@ -27,7 +27,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.[mc]?[jt]sx$/i,
+        test: /\.[mc]?[jt]sx?$/i,
         exclude: /node_modules/,
         use: [
           // babel-loader, swc-loader, esbuild-loader, or anything you like to transpile JSX should go here.
