@@ -15,7 +15,9 @@
     "prepublishOnly": "npm run build",
     "pretest": "npm run build",
     "test": "mocha -r @swc-node/register 'test/index.ts'",
-    "test:update": "mocha --update -r @swc-node/register 'test/index.ts'"
+    "test:update": "mocha --update -r @swc-node/register 'test/index.ts'",
+    "prerelease": "pnpm run build && pnpm run lint",
+    "release": "bumpp -r --all --commit \"release: %s\" --tag \"%s\""
   },
   "keywords": [
     "react",
