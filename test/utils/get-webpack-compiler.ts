@@ -1,6 +1,7 @@
 import path from 'node:path';
 
-import webpack from 'webpack';
+import type Webpack from 'webpack';
+import { webpack } from 'webpack';
 import { createFsFromVolume, Volume } from 'memfs';
 
 import type { ReactCompilerLoaderOption } from '../../src';
@@ -15,8 +16,8 @@ export const externalModules = Object.keys(pkgJson.dependencies)
   .concat(Object.keys(pkgJson.peerDependencies))
   .concat(builtinModules)
   .concat(['react', 'react/jsx-runtime', 'forgetti', 'forgetti/runtime', 'preact/hooks', 'preact/compat', 'preact']);
-export default (fixture: string, loaderOptions?: ReactCompilerLoaderOption, config: webpack.Configuration = {}) => {
-  const fullConfig: webpack.Configuration = {
+export default (fixture: string, loaderOptions?: ReactCompilerLoaderOption, config: Webpack.Configuration = {}) => {
+  const fullConfig: Webpack.Configuration = {
     mode: 'development',
     target: 'web',
     devtool: config.devtool || false,

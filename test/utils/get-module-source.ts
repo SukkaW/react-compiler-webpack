@@ -1,7 +1,7 @@
-import type webpack from 'webpack';
+import type Webpack from 'webpack';
 import type { Stats as RspackStats, MultiStats as RspackMultiStats } from '@rspack/core';
 
-export default function getModuleSource(id: string, stats: webpack.Stats | RspackStats | RspackMultiStats, fs: typeof import('fs')) {
+export default function getModuleSource(id: string, stats: Webpack.Stats | RspackStats | RspackMultiStats, fs: typeof import('fs')) {
   const jsonStat = stats.toJson({ source: true });
   const $module = jsonStat.modules?.find((m) => m.name?.endsWith(id));
 

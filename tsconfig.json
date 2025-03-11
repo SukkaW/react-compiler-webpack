@@ -10,6 +10,6 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true
   },
-  "include": ["src/**/*", "rollup.config.ts", "test/**/*", "next.d.ts"],
+  "include": ["src/**/*", "test/**/*", "next.d.ts"],
   "exclude": ["node_modules", "dist", "test/fixtures/**/*"]
 }

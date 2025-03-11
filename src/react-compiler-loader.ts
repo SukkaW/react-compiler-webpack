@@ -1,7 +1,7 @@
 import babel from '@babel/core';
 import BabelPluginReactCompiler from 'babel-plugin-react-compiler';
 
-import type webpack from 'webpack';
+import type Webpack from 'webpack';
 import type { ReactCompilerConfig } from './types';
 
 export interface ReactCompilerLoaderOption extends ReactCompilerConfig {
@@ -10,7 +10,7 @@ export interface ReactCompilerLoaderOption extends ReactCompilerConfig {
 
 const defaultBabelParsePlugins: NonNullable<NonNullable<babel.TransformOptions['parserOpts']>['plugins']> = ['jsx', 'typescript'];
 
-export default async function reactCompilerLoader(this: webpack.LoaderContext<ReactCompilerLoaderOption>, input: string, _inputSourceMap: any) {
+export default async function reactCompilerLoader(this: Webpack.LoaderContext<ReactCompilerLoaderOption>, input: string, _inputSourceMap: any) {
   const callback = this.async();
 
   // TODO: is it possible to bail out early if the input doesn't contain a react component?

@@ -1,7 +1,7 @@
 import type { Compiler as RspackCompiler, Stats as RspackStats, MultiStats as RspackMultiStats } from '@rspack/core';
-import type webpack from 'webpack';
+import type Webpack from 'webpack';
 
-export default function compile(compiler: webpack.Compiler | RspackCompiler): Promise<webpack.Stats | RspackStats | RspackMultiStats> {
+export default function compile(compiler: Webpack.Compiler | RspackCompiler): Promise<Webpack.Stats | RspackStats | RspackMultiStats> {
   return new Promise((resolve, reject) => {
     compiler.run((error, stats) => {
       if (error) {
