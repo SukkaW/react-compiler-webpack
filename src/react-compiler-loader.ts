@@ -2,7 +2,7 @@ import babel from '@babel/core';
 import BabelPluginReactCompiler from 'babel-plugin-react-compiler';
 
 import type Webpack from 'webpack';
-import type { ReactCompilerConfig } from './types';
+import type { PluginOptions as ReactCompilerConfig } from 'babel-plugin-react-compiler';
 
 export interface ReactCompilerLoaderOption extends ReactCompilerConfig {
   babelTransFormOpt?: babel.TransformOptions
