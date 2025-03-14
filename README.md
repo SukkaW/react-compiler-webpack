@@ -13,6 +13,17 @@ yarn add -D react-compiler-webpack
 pnpm add -D react-compiler-webpack
 ```
 
+`react-compiler-webpack` has already declares `babel-plugin-react-compiler` as its peer dependency and it will be installed automatically when you install `react-compiler-webpack` with most package managers. But you can also explictly specify the version you like by manually install `babel-plugin-react-compiler` in your project:
+
+```bash
+# npm
+npm i -D babel-plugin-react-compiler
+# yarn
+yarn add -D babel-plugin-react-compiler
+# pnpm
+pnpm add -D babel-plugin-react-compiler
+```
+
 ## Usage
 
 ### webpack/rspack
