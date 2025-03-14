@@ -33,7 +33,7 @@ module.exports = {
           // babel-loader, swc-loader, esbuild-loader, or anything you like to transpile JSX should go here.
           // If you are using rspack, the rspack's buiilt-in react transformation is sufficient.
           // { loader: 'swc-loader' },
-          // Now add forgetti-loader
+          // Now add reactCompilerLoader
           {
             loader: reactCompilerLoader,
             options: defineReactCompilerLoaderOption({
