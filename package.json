@@ -15,8 +15,8 @@
     "build": "rollup -c rollup.config.ts --configPlugin swc3 --bundleConfigAsCjs",
     "prepublishOnly": "npm run build",
     "pretest": "npm run build",
-    "test": "mocha -r @swc-node/register 'test/index.ts'",
-    "test:update": "mocha --update -r @swc-node/register 'test/index.ts'",
+    "test": "mocha -r @swc-node/register --require mocha-expect-snapshot 'test/index.ts'",
+    "test:update": "UPDATE_SNAPSHOT=all mocha -r @swc-node/register --require mocha-expect-snapshot 'test/index.ts'",
     "prerelease": "pnpm run build && pnpm run lint",
     "release": "bumpp -r --all --commit \"release: %s\" --tag \"%s\""
   },
@@ -35,30 +35,29 @@
     "@babel/core": "^7.27.1",
     "@babel/plugin-syntax-jsx": "^7.27.1",
     "@babel/plugin-syntax-typescript": "^7.27.1",
+    "expect": "^29.7.0",
     "loader-utils": "^3.3.1"
   },
   "devDependencies": {
     "@eslint-sukka/node": "^6.19.0",
+    "@jest/expect": "^29.7.0",
     "@rspack/core": "^1.3.9",
     "@swc-node/register": "^1.10.10",
     "@swc/core": "^1.11.24",
     "@types/babel__core": "^7.20.5",
-    "@types/chai": "^4.3.20",
     "@types/loader-utils": "^2.0.6",
     "@types/mocha": "^10.0.10",
     "@types/node": "^22.15.17",
     "babel-plugin-react-compiler": "^19.1.0-rc.1",
     "browserslist": "^4.24.5",
     "bumpp": "^10.1.0",
-    "chai": "^4.5.0",
     "eslint": "^9.26.0",
     "eslint-config-sukka": "^6.19.0",
     "eslint-formatter-sukka": "^6.19.0",
     "memfs": "^5.0.0-next.1",
     "mocha": "^11.2.2",
-    "mocha-chai-jest-snapshot": "^1.1.6",
+    "mocha-expect-snapshot": "^7.2.0",
     "next": "^15.3.2",
-    "postcss": "^8.5.3",
     "rimraf": "^6.0.1",
     "rollup": "^4.40.2",
     "rollup-plugin-dts": "^6.2.1",
@@ -75,7 +74,6 @@
     "neverBuiltDependencies": []
   },
   "overrides": {
-    "chai": "$chai",
     "hasown": "npm:@nolyfill/hasown@latest"
   }
 }
