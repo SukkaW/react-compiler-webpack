@@ -34,8 +34,7 @@
   "dependencies": {
     "@babel/core": "^7.28.4",
     "@babel/plugin-syntax-jsx": "^7.27.1",
-    "@babel/plugin-syntax-typescript": "^7.27.1",
-    "loader-utils": "^3.3.1"
+    "@babel/plugin-syntax-typescript": "^7.27.1"
   },
   "devDependencies": {
     "@eslint-sukka/node": "^7.1.1",
@@ -44,7 +43,6 @@
     "@swc-node/register": "^1.11.1",
     "@swc/core": "^1.13.5",
     "@types/babel__core": "^7.20.5",
-    "@types/loader-utils": "^3.0.0",
     "@types/mocha": "^10.0.10",
     "@types/node": "^24.5.2",
     "babel-plugin-react-compiler": "^19.1.0-rc.3",

@@ -20,9 +20,6 @@ importers:
       '@babel/plugin-syntax-typescript':
         specifier: ^7.27.1
         version: 7.27.1(@babel/core@7.28.4)
-      loader-utils:
-        specifier: ^3.3.1
-        version: 3.3.1
     devDependencies:
       '@eslint-sukka/node':
         specifier: ^7.1.1
@@ -42,9 +39,6 @@ importers:
       '@types/babel__core':
         specifier: ^7.20.5
         version: 7.20.5
-      '@types/loader-utils':
-        specifier: ^3.0.0
-        version: 3.0.0(@swc/core@1.13.5)
       '@types/mocha':
         specifier: ^10.0.10
         version: 10.0.10
@@ -1115,9 +1109,6 @@ packages:
 
   '@types/json-schema@7.0.15':
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
-
-  '@types/loader-utils@3.0.0':
-    resolution: {integrity: sha512-oOi4OGpiLUbb+Q/cN9FIkkDFgOpOGZ2cUAzb5i03wrGstnG6Syx1WDMhSiB5rcP10XX7cw7Uev8mv++/aplnNg==}
 
   '@types/mocha@10.0.10':
     resolution: {integrity: sha512-xPyYSz1cMPnJQhl0CLMH68j3gprKZaTjG3s5Vi+fDgx+uhG9NOXwbVt52eFS8ECyXhyKcjDLCBEqBExKuiZb7Q==}
@@ -2191,10 +2182,6 @@ packages:
   loader-runner@4.3.0:
     resolution: {integrity: sha512-3R/1M+yS3j5ou80Me59j7F9IMs4PXs3VqRrm0TU3AbKPxlmpoY1TNscJV/oGJXo8qCatFGTfDbY6W6ipGOYXfg==}
     engines: {node: '>=6.11.5'}
-
-  loader-utils@3.3.1:
-    resolution: {integrity: sha512-FMJTLMXfCLMLfJxcX9PFqX5qD88Z5MRGaZCVzfuqeZSPsyiBzs+pahDQjbIWz2QIzPZz0NX9Zy4FX3lmK6YHIg==}
-    engines: {node: '>= 12.13.0'}
 
   locate-path@5.0.0:
     resolution: {integrity: sha512-t7hw9pI+WvuwNJXwk5zVHpyhIqzg2qTlklJOf0mVxGSbe3Fp2VieZcduNYjaLDoy6p9uGpQEGWG87WpMKlNq8g==}
@@ -3798,16 +3785,6 @@ snapshots:
 
   '@types/json-schema@7.0.15': {}
 
-  '@types/loader-utils@3.0.0(@swc/core@1.13.5)':
-    dependencies:
-      '@types/node': 24.5.2
-      webpack: 5.101.3(@swc/core@1.13.5)
-    transitivePeerDependencies:
-      - '@swc/core'
-      - esbuild
-      - uglify-js
-      - webpack-cli
-
   '@types/mocha@10.0.10': {}
 
   '@types/node@24.5.2':
@@ -5003,8 +4980,6 @@ snapshots:
       type-check: 0.4.0
 
   loader-runner@4.3.0: {}
-
-  loader-utils@3.3.1: {}
 
   locate-path@5.0.0:
     dependencies:
