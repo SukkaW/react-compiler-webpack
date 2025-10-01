@@ -9,7 +9,7 @@ import type { RuleSetRule } from 'webpack';
 
 type RuleOptions = Omit<RuleSetRule, 'use'>;
 
-export const defineReactCompilerLoaderOption = (options: ReactCompilerLoaderOption) => options;
+export const defineReactCompilerLoaderOption = (options: Partial<ReactCompilerLoaderOption>) => options;
 
 export function withReactCompiler(pluginOptions?: ReactCompilerLoaderOption, ruleOptions: RuleOptions = {}) {
   return (nextConfig: NextConfig = {}) => {
