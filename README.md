@@ -13,7 +13,7 @@ yarn add -D react-compiler-webpack
 pnpm add -D react-compiler-webpack
 ```
 
-`react-compiler-webpack` has already declares `babel-plugin-react-compiler` as its peer dependency and it will be installed automatically when you install `react-compiler-webpack` with most package managers. But you can also explictly specify the version you like by manually install `babel-plugin-react-compiler` in your project:
+`react-compiler-webpack` has already declares `babel-plugin-react-compiler` as its peer dependency and it will be installed automatically when you install `react-compiler-webpack` with most package managers. But you can also explictly specify the version you want to use by manually install `babel-plugin-react-compiler` in your project:
 
 ```bash
 # npm
@@ -25,8 +25,6 @@ pnpm add -D babel-plugin-react-compiler
 ```
 
 ## Usage
-
-### webpack/rspack
 
 ```js
 // webpack.config.js / rspack.config.js
@@ -44,6 +42,7 @@ module.exports = {
           // babel-loader, swc-loader, esbuild-loader, or anything you like to transpile JSX should go here.
           // If you are using rspack, the rspack's buiilt-in react transformation is sufficient.
           // { loader: 'swc-loader' },
+          //
           // Now add reactCompilerLoader
           {
             loader: reactCompilerLoader,
