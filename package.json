@@ -1,6 +1,6 @@
 {
   "name": "react-compiler-webpack",
-  "version": "0.2.2-beta.1",
+  "version": "1.0.0",
   "description": "The webpack/Next.js Plugin for React Compiler",
   "repository": "https://github.com/SukkaW/react-compiler-webpack",
   "main": "./dist/index.js",
