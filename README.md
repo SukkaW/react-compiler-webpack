@@ -58,32 +58,6 @@ module.exports = {
 };
 ```
 
-### Next.js
-
-Next.js has already integrated the React Compiler and can be enabled with the following configuration:
-
-```js
-// next.config.js
-module.exports = {
-  experimental: {
-    reactCompiler: true // or React Compiler options
-  }
-}
-```
-
-Using Next.js built-in React Compiler integration is highly recommended. But if you insist on going with `react-compiler-webpack`, you can follow use the provided Next.js plugin:
-
-```js
-// next.config.js
-const { withReactCompiler } = require('react-compiler-webpack');
-
-module.exports = withReactCompiler({
-  // React Compiler options goes here
-})({
-  // Next.js config goes here
-});
-```
-
 ## Author
 
 **react-compiler-webpack** © [Sukka](https://github.com/SukkaW), Released under the [MIT](./LICENSE) License.<br>
