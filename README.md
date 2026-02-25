@@ -40,7 +40,7 @@ module.exports = {
         exclude: /node_modules/,
         use: [
           // babel-loader, swc-loader, esbuild-loader, or anything you like to transpile JSX should go here.
-          // If you are using rspack, the rspack's buiilt-in react transformation is sufficient.
+          // If you are using rspack, the rspack's built-in react transformation is sufficient.
           // { loader: 'swc-loader' },
           //
           // Now add reactCompilerLoader
