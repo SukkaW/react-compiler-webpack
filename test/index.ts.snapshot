@@ -1,0 +1,327 @@
+// react-compiler-webpack (webpack) should work 1
+
+"""
+import { jsx as _jsx } from "react/jsx-runtime";
+import { c as _c } from "react/compiler-runtime";
+export default function Example() {
+    const $ = _c(1);
+    let t0;
+    if ($[0] === Symbol.for("react.memo_cache_sentinel")) {
+        const value = [
+            1,
+            2,
+            3,
+            4
+        ];
+        t0 = /*#__PURE__*/ _jsx("div", {
+            children: value.map(_temp)
+        });
+        $[0] = t0;
+    } else {
+        t0 = $[0];
+    }
+    return t0;
+}
+function _temp(i) {
+    return /*#__PURE__*/ _jsx("p", {
+        children: i
+    }, i);
+}
+
+"""
+
+// react-compiler-webpack (webpack) should work with tsx 1
+
+"""
+import { jsx as _jsx } from "react/jsx-runtime";
+import { c as _c } from "react/compiler-runtime";
+export default function Example() {
+    const $ = _c(2);
+    let t0;
+    if ($[0] === Symbol.for("react.memo_cache_sentinel")) {
+        t0 = [
+            1,
+            2,
+            3,
+            4
+        ];
+        $[0] = t0;
+    } else {
+        t0 = $[0];
+    }
+    const value = t0;
+    let t1;
+    if ($[1] === Symbol.for("react.memo_cache_sentinel")) {
+        t1 = /*#__PURE__*/ _jsx("div", {
+            children: value.map(_temp)
+        });
+        $[1] = t1;
+    } else {
+        t1 = $[1];
+    }
+    return t1;
+}
+function _temp(i) {
+    return /*#__PURE__*/ _jsx("p", {
+        children: i
+    }, i);
+}
+export const AnotherExmaple = ()=>{
+    const $ = _c(2);
+    let t0;
+    if ($[0] === Symbol.for("react.memo_cache_sentinel")) {
+        t0 = [
+            1,
+            2,
+            3,
+            4
+        ];
+        $[0] = t0;
+    } else {
+        t0 = $[0];
+    }
+    const value = t0;
+    let t1;
+    if ($[1] === Symbol.for("react.memo_cache_sentinel")) {
+        t1 = /*#__PURE__*/ _jsx("div", {
+            children: value.map(_temp2)
+        });
+        $[1] = t1;
+    } else {
+        t1 = $[1];
+    }
+    return t1;
+};
+function _temp2(i) {
+    return /*#__PURE__*/ _jsx("p", {
+        children: i
+    }, i);
+}
+
+"""
+
+// react-compiler-webpack (webpack) should optimize complex component 1
+
+"""
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import { useState, useRef, useCallback } from 'react';
+export default function Sukka() {
+    const [count, setCount] = useState(0);
+    const singletonRef = useRef(null);
+    if (!singletonRef.current) {
+        singletonRef.current = new AbortController();
+    }
+    const handleButtonClick = useCallback(()=>setCount((count_0)=>count_0 + 1), []);
+    if (count > 10) return null;
+    return /*#__PURE__*/ _jsxs("div", {
+        children: [
+            /*#__PURE__*/ _jsxs("p", {
+                children: [
+                    "Count: ",
+                    count
+                ]
+            }),
+            /*#__PURE__*/ _jsx("button", {
+                onClick: handleButtonClick,
+                children: "Increment"
+            }),
+            count > 10 && /*#__PURE__*/ _jsx("p", {
+                children: "Count is higher than 10"
+            }),
+            /*#__PURE__*/ _jsx("button", {
+                disabled: count > 0,
+                onClick: ()=>setCount(0),
+                children: "Reset Count"
+            })
+        ]
+    });
+}
+
+"""
+
+// react-compiler-webpack (webpack) facebook/react issue #29120 1
+
+"""
+import { jsx as _jsx } from "react/jsx-runtime";
+import { c as _c } from "react/compiler-runtime";
+// https://github.com/facebook/react/issues/29120
+export default function Comp() {
+    const $ = _c(1);
+    let t0;
+    if ($[0] === Symbol.for("react.memo_cache_sentinel")) {
+        t0 = /*#__PURE__*/ _jsx("div", {
+            "aria-label": "\u6211\u80FD\u541E\u4E0B\u73BB\u7483\u800C\u4E0D\u4F24\u8EAB\u4F53",
+            children: "我能吞下玻璃而不伤身体"
+        });
+        $[0] = t0;
+    } else {
+        t0 = $[0];
+    }
+    return t0;
+}
+
+"""
+
+// react-compiler-webpack (rspack) should work 1
+
+"""
+import { jsx as _jsx } from "react/jsx-runtime";
+import { c as _c } from "react/compiler-runtime";
+export default function Example() {
+    const $ = _c(1);
+    let t0;
+    if ($[0] === Symbol.for("react.memo_cache_sentinel")) {
+        const value = [
+            1,
+            2,
+            3,
+            4
+        ];
+        t0 = /*#__PURE__*/ _jsx("div", {
+            children: value.map(_temp)
+        });
+        $[0] = t0;
+    } else {
+        t0 = $[0];
+    }
+    return t0;
+}
+function _temp(i) {
+    return /*#__PURE__*/ _jsx("p", {
+        children: i
+    }, i);
+}
+
+"""
+
+// react-compiler-webpack (rspack) should work with tsx 1
+
+"""
+import { jsx as _jsx } from "react/jsx-runtime";
+import { c as _c } from "react/compiler-runtime";
+export default function Example() {
+    const $ = _c(2);
+    let t0;
+    if ($[0] === Symbol.for("react.memo_cache_sentinel")) {
+        t0 = [
+            1,
+            2,
+            3,
+            4
+        ];
+        $[0] = t0;
+    } else {
+        t0 = $[0];
+    }
+    const value = t0;
+    let t1;
+    if ($[1] === Symbol.for("react.memo_cache_sentinel")) {
+        t1 = /*#__PURE__*/ _jsx("div", {
+            children: value.map(_temp)
+        });
+        $[1] = t1;
+    } else {
+        t1 = $[1];
+    }
+    return t1;
+}
+function _temp(i) {
+    return /*#__PURE__*/ _jsx("p", {
+        children: i
+    }, i);
+}
+export const AnotherExmaple = ()=>{
+    const $ = _c(2);
+    let t0;
+    if ($[0] === Symbol.for("react.memo_cache_sentinel")) {
+        t0 = [
+            1,
+            2,
+            3,
+            4
+        ];
+        $[0] = t0;
+    } else {
+        t0 = $[0];
+    }
+    const value = t0;
+    let t1;
+    if ($[1] === Symbol.for("react.memo_cache_sentinel")) {
+        t1 = /*#__PURE__*/ _jsx("div", {
+            children: value.map(_temp2)
+        });
+        $[1] = t1;
+    } else {
+        t1 = $[1];
+    }
+    return t1;
+};
+function _temp2(i) {
+    return /*#__PURE__*/ _jsx("p", {
+        children: i
+    }, i);
+}
+
+"""
+
+// react-compiler-webpack (rspack) should optimize complex component 1
+
+"""
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import { useState, useRef, useCallback } from 'react';
+export default function Sukka() {
+    const [count, setCount] = useState(0);
+    const singletonRef = useRef(null);
+    if (!singletonRef.current) {
+        singletonRef.current = new AbortController();
+    }
+    const handleButtonClick = useCallback(()=>setCount((count_0)=>count_0 + 1), []);
+    if (count > 10) return null;
+    return /*#__PURE__*/ _jsxs("div", {
+        children: [
+            /*#__PURE__*/ _jsxs("p", {
+                children: [
+                    "Count: ",
+                    count
+                ]
+            }),
+            /*#__PURE__*/ _jsx("button", {
+                onClick: handleButtonClick,
+                children: "Increment"
+            }),
+            count > 10 && /*#__PURE__*/ _jsx("p", {
+                children: "Count is higher than 10"
+            }),
+            /*#__PURE__*/ _jsx("button", {
+                disabled: count > 0,
+                onClick: ()=>setCount(0),
+                children: "Reset Count"
+            })
+        ]
+    });
+}
+
+"""
+
+// react-compiler-webpack (rspack) facebook/react issue #29120 1
+
+"""
+import { jsx as _jsx } from "react/jsx-runtime";
+import { c as _c } from "react/compiler-runtime";
+// https://github.com/facebook/react/issues/29120
+export default function Comp() {
+    const $ = _c(1);
+    let t0;
+    if ($[0] === Symbol.for("react.memo_cache_sentinel")) {
+        t0 = /*#__PURE__*/ _jsx("div", {
+            "aria-label": "\u6211\u80FD\u541E\u4E0B\u73BB\u7483\u800C\u4E0D\u4F24\u8EAB\u4F53",
+            children: "我能吞下玻璃而不伤身体"
+        });
+        $[0] = t0;
+    } else {
+        t0 = $[0];
+    }
+    return t0;
+}
+
+"""

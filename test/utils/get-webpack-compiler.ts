@@ -12,6 +12,8 @@ import { useSwcLoader } from './get-swc-loader';
 
 import { reactCompilerLoader } from '../../dist';
 
+import { nullthrow } from 'foxts/guard';
+
 export const externalModules = Object.keys(pkgJson.dependencies)
   .concat(Object.keys(pkgJson.peerDependencies))
   .concat(builtinModules)
@@ -73,7 +75,7 @@ export default (fixture: string, loaderOptions?: ReactCompilerLoaderOption, conf
     ...config
   };
 
-  const compiler = webpack(fullConfig);
+  const compiler = nullthrow(webpack(fullConfig), 'Failed to create webpack compiler');
   const fs = createFsFromVolume(new Volume()) as unknown as typeof import('fs');
 
   compiler.outputFileSystem = fs;
