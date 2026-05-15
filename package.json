@@ -37,42 +37,33 @@
     "@babel/plugin-syntax-typescript": "^7.28.6"
   },
   "devDependencies": {
-    "@eslint-sukka/node": "^8.7.0",
-    "@rspack/core": "^1.7.6",
+    "@eslint-sukka/node": "^8.10.3",
+    "@rspack/core": "^1.7.11",
     "@swc-node/register": "^1.11.1",
-    "@swc/core": "^1.15.17",
+    "@swc/core": "^1.15.33",
     "@types/babel__core": "^7.20.5",
     "@types/mocha": "^10.0.10",
-    "@types/node": "^24.11.0",
+    "@types/node": "^24.12.4",
     "babel-plugin-react-compiler": "^19.1.0-rc.3",
-    "browserslist": "^4.28.1",
+    "browserslist": "^4.28.2",
     "bumpp": "^10.4.1",
     "earl": "^2.0.0",
-    "eslint": "^9.39.3",
-    "eslint-config-sukka": "^8.7.0",
-    "eslint-formatter-sukka": "^8.7.0",
-    "expect": "^30.2.0",
-    "foxts": "^5.3.0",
+    "eslint": "^10.4.0",
+    "eslint-config-sukka": "^8.10.3",
+    "eslint-formatter-sukka": "^8.10.3",
+    "expect": "^30.4.1",
+    "foxts": "^5.4.2",
     "memfs": "^5.0.0-next.1",
     "mocha": "^11.7.5",
-    "rollup": "^4.59.0",
-    "rollup-plugin-dts": "^6.3.0",
+    "rollup": "^4.60.4",
+    "rollup-plugin-dts": "^6.4.1",
     "rollup-plugin-swc3": "^0.12.1",
     "swc-loader": "^0.2.7",
-    "typescript": "^5.9.3",
-    "webpack": "^5.105.3"
+    "typescript": "^6.0.3",
+    "webpack": "^5.106.2"
   },
   "peerDependencies": {
     "babel-plugin-react-compiler": "*"
   },
-  "packageManager": "pnpm@10.30.3",
-  "pnpm": {
-    "neverBuiltDependencies": [],
-    "overrides": {
-      "eslint>chalk": "npm:picocolors@^1.1.1"
-    }
-  },
-  "overrides": {
-    "hasown": "npm:@nolyfill/hasown@latest"
-  }
+  "packageManager": "pnpm@11.1.2"
 }
