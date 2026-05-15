@@ -38,7 +38,7 @@ export default async function reactCompilerLoader(this: Webpack.LoaderContext<Re
         ]
       },
       ast: false,
-      sourceMaps: true,
+      sourceMaps: 'both',
       configFile: false,
       babelrc: false
     });
