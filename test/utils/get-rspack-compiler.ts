@@ -62,16 +62,15 @@ export default (fixture: string, loaderOptions?: ReactCompilerLoaderOption, conf
               options: loaderOptions
             }
           ]
-        }]
+        }
+      ]
     },
     optimization: { minimize: false },
     externals: externalModules,
     plugins: [],
     stats: {
-      preset: 'verbose',
-      all: true,
       modules: true,
-      chunks: true
+      source: true
     },
     ...config
   };
