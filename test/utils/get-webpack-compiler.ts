@@ -17,7 +17,7 @@ import { nullthrow } from 'foxts/guard';
 export const externalModules = Object.keys(pkgJson.dependencies)
   .concat(Object.keys(pkgJson.peerDependencies))
   .concat(builtinModules)
-  .concat(['react', 'react/jsx-runtime', 'forgetti', 'forgetti/runtime', 'preact/hooks', 'preact/compat', 'preact']);
+  .concat(['react', 'react/compiler-runtime', 'react/jsx-runtime', 'forgetti', 'forgetti/runtime', 'preact/hooks', 'preact/compat', 'preact']);
 export default (fixture: string, loaderOptions?: ReactCompilerLoaderOption, config: Webpack.Configuration = {}) => {
   const fullConfig: Webpack.Configuration = {
     mode: 'development',
@@ -72,6 +72,13 @@ export default (fixture: string, loaderOptions?: ReactCompilerLoaderOption, conf
     optimization: { minimize: false },
     externals: externalModules,
     plugins: [],
+    stats: {
+      preset: 'verbose',
+      all: true,
+      modules: true,
+      chunks: true,
+      source: true
+    },
     ...config
   };
 

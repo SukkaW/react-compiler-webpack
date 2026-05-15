@@ -1,10 +1,122 @@
 // react-compiler-webpack (webpack) should work 1
 
 """
-import { jsx as _jsx } from "react/jsx-runtime";
-import { c as _c } from "react/compiler-runtime";
-export default function Example() {
-    const $ = _c(1);
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "react/compiler-runtime"
+/*!*****************************************!*\
+  !*** external "react/compiler-runtime" ***!
+  \*****************************************/
+(module) {
+
+module.exports = react/compiler-runtime;
+
+/***/ },
+
+/***/ "react/jsx-runtime"
+/*!************************************!*\
+  !*** external "react/jsx-runtime" ***!
+  \************************************/
+(module) {
+
+module.exports = react/jsx-runtime;
+
+/***/ }
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		if (!(moduleId in __webpack_modules__)) {
+/******/ 			delete __webpack_module_cache__[moduleId];
+/******/ 			var e = new Error("Cannot find module '" + moduleId + "'");
+/******/ 			e.code = 'MODULE_NOT_FOUND';
+/******/ 			throw e;
+/******/ 		}
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+var __webpack_exports__ = {};
+// This entry needs to be wrapped in an IIFE because it needs to be isolated against other modules in the chunk.
+(() => {
+/*!********************!*\
+  !*** ./simple.jsx ***!
+  \********************/
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Example)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_compiler_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/compiler-runtime */ "react/compiler-runtime");
+/* harmony import */ var react_compiler_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_compiler_runtime__WEBPACK_IMPORTED_MODULE_1__);
+
+
+function Example() {
+    const $ = (0,react_compiler_runtime__WEBPACK_IMPORTED_MODULE_1__.c)(1);
     let t0;
     if ($[0] === Symbol.for("react.memo_cache_sentinel")) {
         const value = [
@@ -13,7 +125,7 @@ export default function Example() {
             3,
             4
         ];
-        t0 = /*#__PURE__*/ _jsx("div", {
+        t0 = /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
             children: value.map(_temp)
         });
         $[0] = t0;
@@ -23,20 +135,137 @@ export default function Example() {
     return t0;
 }
 function _temp(i) {
-    return /*#__PURE__*/ _jsx("p", {
+    return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
         children: i
     }, i);
 } //# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJFeGFtcGxlIiwiJCIsIl9jIiwidDAiLCJTeW1ib2wiLCJmb3IiLCJ2YWx1ZSIsIm1hcCIsIl90ZW1wIiwiaSJdLCJzb3VyY2VzIjpbIi9Vc2Vycy9zdWtrYS9Qcm9qZWN0L3JlYWN0LWNvbXBpbGVyLXdlYnBhY2svdGVzdC9maXh0dXJlcy9zaW1wbGUuanN4Il0sInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCBkZWZhdWx0IGZ1bmN0aW9uIEV4YW1wbGUoKSB7XG4gIGNvbnN0IHZhbHVlID0gWzEsIDIsIDMsIDRdO1xuXG4gIHJldHVybiAoXG4gICAgPGRpdj5cbiAgICAgIHt2YWx1ZS5tYXAoaSA9PiA8cCBrZXk9e2l9PntpfTwvcD4pfVxuICAgIDwvZGl2PlxuICApO1xufVxuIl0sIm1hcHBpbmdzIjoiO0FBQUEsZUFBZSxTQUFBQSxRQUFBO0VBQUEsTUFBQUMsQ0FBQSxHQUFBQyxFQUFBO0VBQUEsSUFBQUMsRUFBQTtFQUFBLElBQUFGLENBQUEsUUFBQUcsTUFBQSxDQUFBQyxHQUFBO0lBQ2IsTUFBQUMsS0FBQTtJQUdFSCxFQUFBLE9BRU0sQ0FESCxDQUFBRyxLQUFLLENBQUFDLEdBQUEsQ0FBQUMsS0FBNEIsRUFDcEMsRUFGQSxHQUVNO0lBQUFQLENBQUEsTUFBQUUsRUFBQTtFQUFBO0lBQUFBLEVBQUEsR0FBQUYsQ0FBQTtFQUFBO0VBQUEsT0FGTkUsRUFFTTtBQUFBO0FBTkssU0FBQUssTUFBQUMsQ0FBQTtFQUFBLE9BS08sRUFBa0IsQ0FBVkEsR0FBQyxDQUFEQSxFQUFBLENBQUMsQ0FBR0EsRUFBQSxDQUFFLEVBQWQsQ0FBa0I7QUFBQSIsImlnbm9yZUxpc3QiOltdfQ==
 
+})();
+
+/******/ })()
+;
 """
 
 // react-compiler-webpack (webpack) should work with tsx 1
 
 """
-import { jsx as _jsx } from "react/jsx-runtime";
-import { c as _c } from "react/compiler-runtime";
-export default function Example() {
-    const $ = _c(2);
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "react/compiler-runtime"
+/*!*****************************************!*\
+  !*** external "react/compiler-runtime" ***!
+  \*****************************************/
+(module) {
+
+module.exports = react/compiler-runtime;
+
+/***/ },
+
+/***/ "react/jsx-runtime"
+/*!************************************!*\
+  !*** external "react/jsx-runtime" ***!
+  \************************************/
+(module) {
+
+module.exports = react/jsx-runtime;
+
+/***/ }
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		if (!(moduleId in __webpack_modules__)) {
+/******/ 			delete __webpack_module_cache__[moduleId];
+/******/ 			var e = new Error("Cannot find module '" + moduleId + "'");
+/******/ 			e.code = 'MODULE_NOT_FOUND';
+/******/ 			throw e;
+/******/ 		}
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+var __webpack_exports__ = {};
+// This entry needs to be wrapped in an IIFE because it needs to be isolated against other modules in the chunk.
+(() => {
+/*!********************!*\
+  !*** ./simple.tsx ***!
+  \********************/
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   AnotherExmaple: () => (/* binding */ AnotherExmaple),
+/* harmony export */   "default": () => (/* binding */ Example)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_compiler_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/compiler-runtime */ "react/compiler-runtime");
+/* harmony import */ var react_compiler_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_compiler_runtime__WEBPACK_IMPORTED_MODULE_1__);
+
+
+function Example() {
+    const $ = (0,react_compiler_runtime__WEBPACK_IMPORTED_MODULE_1__.c)(2);
     let t0;
     if ($[0] === Symbol.for("react.memo_cache_sentinel")) {
         t0 = [
@@ -52,7 +281,7 @@ export default function Example() {
     const value = t0;
     let t1;
     if ($[1] === Symbol.for("react.memo_cache_sentinel")) {
-        t1 = /*#__PURE__*/ _jsx("div", {
+        t1 = /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
             children: value.map(_temp)
         });
         $[1] = t1;
@@ -62,12 +291,12 @@ export default function Example() {
     return t1;
 }
 function _temp(i) {
-    return /*#__PURE__*/ _jsx("p", {
+    return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
         children: i
     }, i);
 }
-export const AnotherExmaple = ()=>{
-    const $ = _c(2);
+const AnotherExmaple = ()=>{
+    const $ = (0,react_compiler_runtime__WEBPACK_IMPORTED_MODULE_1__.c)(2);
     let t0;
     if ($[0] === Symbol.for("react.memo_cache_sentinel")) {
         t0 = [
@@ -83,7 +312,7 @@ export const AnotherExmaple = ()=>{
     const value = t0;
     let t1;
     if ($[1] === Symbol.for("react.memo_cache_sentinel")) {
-        t1 = /*#__PURE__*/ _jsx("div", {
+        t1 = /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
             children: value.map(_temp2)
         });
         $[1] = t1;
@@ -93,42 +322,158 @@ export const AnotherExmaple = ()=>{
     return t1;
 };
 function _temp2(i) {
-    return /*#__PURE__*/ _jsx("p", {
+    return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
         children: i
     }, i);
 } //# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJFeGFtcGxlIiwiJCIsIl9jIiwidDAiLCJTeW1ib2wiLCJmb3IiLCJ2YWx1ZSIsImNvbnN0IiwidDEiLCJtYXAiLCJfdGVtcCIsImkiLCJBbm90aGVyRXhtYXBsZSIsIl90ZW1wMiJdLCJzb3VyY2VzIjpbIi9Vc2Vycy9zdWtrYS9Qcm9qZWN0L3JlYWN0LWNvbXBpbGVyLXdlYnBhY2svdGVzdC9maXh0dXJlcy9zaW1wbGUudHN4Il0sInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCBkZWZhdWx0IGZ1bmN0aW9uIEV4YW1wbGUoKSB7XG4gIGNvbnN0IHZhbHVlID0gWzEsIDIsIDMsIDRdIGFzIGNvbnN0O1xuXG4gIHJldHVybiAoXG4gICAgPGRpdj5cbiAgICAgIHt2YWx1ZS5tYXAoaSA9PiA8cCBrZXk9e2l9PntpfTwvcD4pfVxuICAgIDwvZGl2PlxuICApO1xufVxuXG5leHBvcnQgY29uc3QgQW5vdGhlckV4bWFwbGUgPSAoKSA9PiB7XG4gIGNvbnN0IHZhbHVlID0gWzEsIDIsIDMsIDRdIGFzIGNvbnN0O1xuXG4gIHJldHVybiAoXG4gICAgPGRpdj5cbiAgICAgIHt2YWx1ZS5tYXAoaSA9PiA8cCBrZXk9e2l9PntpfTwvcD4pfVxuICAgIDwvZGl2PlxuICApO1xufTtcbiJdLCJtYXBwaW5ncyI6IjtBQUFBLGVBQWUsU0FBQUEsUUFBQTtFQUFBLE1BQUFDLENBQUEsR0FBQUMsRUFBQTtFQUFBLElBQUFDLEVBQUE7RUFBQSxJQUFBRixDQUFBLFFBQUFHLE1BQUEsQ0FBQUMsR0FBQTtJQUNDRixFQUFBO0lBQVlGLENBQUEsTUFBQUUsRUFBQTtFQUFBO0lBQUFBLEVBQUEsR0FBQUYsQ0FBQTtFQUFBO0VBQTFCLE1BQUFLLEtBQUEsR0FBY0gsRUFBWSxJQUFJSSxLQUFLO0VBQUMsSUFBQUMsRUFBQTtFQUFBLElBQUFQLENBQUEsUUFBQUcsTUFBQSxDQUFBQyxHQUFBO0lBR2xDRyxFQUFBLE9BRU0sQ0FESCxDQUFBRixLQUFLLENBQUFHLEdBQUEsQ0FBQUMsS0FBNEIsRUFDcEMsRUFGQSxHQUVNO0lBQUFULENBQUEsTUFBQU8sRUFBQTtFQUFBO0lBQUFBLEVBQUEsR0FBQVAsQ0FBQTtFQUFBO0VBQUEsT0FGTk8sRUFFTTtBQUFBO0FBTkssU0FBQUUsTUFBQUMsQ0FBQTtFQUFBLE9BS08sRUFBa0IsQ0FBVkEsR0FBQyxDQUFEQSxFQUFBLENBQUMsQ0FBR0EsRUFBQSxDQUFFLEVBQWQsQ0FBa0I7QUFBQTtBQUt4QyxPQUFPLE1BQU1DLGNBQWMsR0FBR0EsQ0FBQTtFQUFBLE1BQUFYLENBQUEsR0FBQUMsRUFBQTtFQUFBLElBQUFDLEVBQUE7RUFBQSxJQUFBRixDQUFBLFFBQUFHLE1BQUEsQ0FBQUMsR0FBQTtJQUNkRixFQUFBO0lBQVlGLENBQUEsTUFBQUUsRUFBQTtFQUFBO0lBQUFBLEVBQUEsR0FBQUYsQ0FBQTtFQUFBO0VBQTFCLE1BQUFLLEtBQUEsR0FBY0gsRUFBWSxJQUFJSSxLQUFLO0VBQUMsSUFBQUMsRUFBQTtFQUFBLElBQUFQLENBQUEsUUFBQUcsTUFBQSxDQUFBQyxHQUFBO0lBR2xDRyxFQUFBLE9BRU0sQ0FESCxDQUFBRixLQUFLLENBQUFHLEdBQUEsQ0FBQUksTUFBNEIsRUFDcEMsRUFGQSxHQUVNO0lBQUFaLENBQUEsTUFBQU8sRUFBQTtFQUFBO0lBQUFBLEVBQUEsR0FBQVAsQ0FBQTtFQUFBO0VBQUEsT0FGTk8sRUFFTTtBQUFBLENBRVQ7QUFSNkIsU0FBQUssT0FBQUYsQ0FBQTtFQUFBLE9BS1IsRUFBa0IsQ0FBVkEsR0FBQyxDQUFEQSxFQUFBLENBQUMsQ0FBR0EsRUFBQSxDQUFFLEVBQWQsQ0FBa0I7QUFBQSIsImlnbm9yZUxpc3QiOltdfQ==
 
+})();
+
+/******/ })()
+;
 """
 
 // react-compiler-webpack (webpack) should optimize complex component 1
 
 """
-import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import { useState, useRef, useCallback } from 'react';
-export default function Sukka() {
-    const [count, setCount] = useState(0);
-    const singletonRef = useRef(null);
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "react"
+/*!************************!*\
+  !*** external "react" ***!
+  \************************/
+(module) {
+
+module.exports = react;
+
+/***/ },
+
+/***/ "react/jsx-runtime"
+/*!************************************!*\
+  !*** external "react/jsx-runtime" ***!
+  \************************************/
+(module) {
+
+module.exports = react/jsx-runtime;
+
+/***/ }
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		if (!(moduleId in __webpack_modules__)) {
+/******/ 			delete __webpack_module_cache__[moduleId];
+/******/ 			var e = new Error("Cannot find module '" + moduleId + "'");
+/******/ 			e.code = 'MODULE_NOT_FOUND';
+/******/ 			throw e;
+/******/ 		}
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+var __webpack_exports__ = {};
+// This entry needs to be wrapped in an IIFE because it needs to be isolated against other modules in the chunk.
+(() => {
+/*!*********************!*\
+  !*** ./complex.tsx ***!
+  \*********************/
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Sukka)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+
+
+function Sukka() {
+    const [count, setCount] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(0);
+    const singletonRef = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(null);
     if (!singletonRef.current) {
         singletonRef.current = new AbortController();
     }
-    const handleButtonClick = useCallback(()=>setCount((count_0)=>count_0 + 1), []);
+    const handleButtonClick = (0,react__WEBPACK_IMPORTED_MODULE_1__.useCallback)(()=>setCount((count_0)=>count_0 + 1), []);
     if (count > 10) return null;
-    return /*#__PURE__*/ _jsxs("div", {
+    return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
         children: [
-            /*#__PURE__*/ _jsxs("p", {
+            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("p", {
                 children: [
                     "Count: ",
                     count
                 ]
             }),
-            /*#__PURE__*/ _jsx("button", {
+            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("button", {
                 onClick: handleButtonClick,
                 children: "Increment"
             }),
-            count > 10 && /*#__PURE__*/ _jsx("p", {
+            count > 10 && /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
                 children: "Count is higher than 10"
             }),
-            /*#__PURE__*/ _jsx("button", {
+            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("button", {
                 disabled: count > 0,
                 onClick: ()=>setCount(0),
                 children: "Reset Count"
@@ -137,19 +482,135 @@ export default function Sukka() {
     });
 } //# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJ1c2VTdGF0ZSIsInVzZVJlZiIsInVzZUNhbGxiYWNrIiwiU3Vra2EiLCJjb3VudCIsInNldENvdW50Iiwic2luZ2xldG9uUmVmIiwiQWJvcnRDb250cm9sbGVyIiwiY3VycmVudCIsImhhbmRsZUJ1dHRvbkNsaWNrIl0sInNvdXJjZXMiOlsiL1VzZXJzL3N1a2thL1Byb2plY3QvcmVhY3QtY29tcGlsZXItd2VicGFjay90ZXN0L2ZpeHR1cmVzL2NvbXBsZXgudHN4Il0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IHVzZVN0YXRlLCB1c2VSZWYsIHVzZUNhbGxiYWNrIH0gZnJvbSAncmVhY3QnO1xuXG5leHBvcnQgZGVmYXVsdCBmdW5jdGlvbiBTdWtrYSgpIHtcbiAgY29uc3QgW2NvdW50LCBzZXRDb3VudF0gPSB1c2VTdGF0ZSgwKTtcblxuICBjb25zdCBzaW5nbGV0b25SZWYgPSB1c2VSZWY8QWJvcnRDb250cm9sbGVyIHwgbnVsbD4obnVsbCk7XG5cbiAgaWYgKCFzaW5nbGV0b25SZWYuY3VycmVudCkge1xuICAgIHNpbmdsZXRvblJlZi5jdXJyZW50ID0gbmV3IEFib3J0Q29udHJvbGxlcigpO1xuICB9XG5cbiAgY29uc3QgaGFuZGxlQnV0dG9uQ2xpY2sgPSB1c2VDYWxsYmFjaygoKSA9PiBzZXRDb3VudChjb3VudCA9PiBjb3VudCArIDEpLCBbXSk7XG5cbiAgaWYgKGNvdW50ID4gMTApIHJldHVybiBudWxsO1xuXG4gIHJldHVybiAoXG4gICAgPGRpdj5cbiAgICAgIDxwPkNvdW50OiB7Y291bnR9PC9wPlxuICAgICAgPGJ1dHRvbiBvbkNsaWNrPXtoYW5kbGVCdXR0b25DbGlja30+SW5jcmVtZW50PC9idXR0b24+XG5cbiAgICAgIHtjb3VudCA+IDEwICYmIChcbiAgICAgICAgPHA+Q291bnQgaXMgaGlnaGVyIHRoYW4gMTA8L3A+XG4gICAgICApfVxuICAgICAgPGJ1dHRvbiBkaXNhYmxlZD17Y291bnQgPiAwfSBvbkNsaWNrPXsoKSA9PiBzZXRDb3VudCgwKX0+UmVzZXQgQ291bnQ8L2J1dHRvbj5cbiAgICA8L2Rpdj5cbiAgKTtcbn1cbiJdLCJtYXBwaW5ncyI6IkFBQUEsU0FBU0EsUUFBUSxFQUFFQyxNQUFNLEVBQUVDLFdBQVcsUUFBUSxPQUFPO0FBRXJELGVBQWUsU0FBU0MsS0FBS0EsQ0FBQSxFQUFHO0VBQzlCLE1BQU0sQ0FBQ0MsS0FBSyxFQUFFQyxRQUFRLENBQUMsR0FBR0wsUUFBUSxDQUFDLENBQUMsQ0FBQztFQUVyQyxNQUFNTSxZQUFZLEdBQUdMLE1BQU0sQ0FBQ00sZUFBZSxHQUFHLElBQUksQ0FBQyxDQUFDLElBQUksQ0FBQztFQUV6RCxJQUFJLENBQUNELFlBQVksQ0FBQ0UsT0FBTyxFQUFFO0lBQ3pCRixZQUFZLENBQUNFLE9BQU8sR0FBRyxJQUFJRCxlQUFlLENBQUMsQ0FBQztFQUM5QztFQUVBLE1BQU1FLGlCQUFpQixHQUFHUCxXQUFXLENBQUMsTUFBTUcsUUFBUSxDQUFDRCxPQUFLLElBQUlBLE9BQUssR0FBRyxDQUFDLENBQUMsRUFBRSxFQUFFLENBQUM7RUFFN0UsSUFBSUEsS0FBSyxHQUFHLEVBQUUsRUFBRSxPQUFPLElBQUk7RUFFM0IsT0FDRSxDQUFDLEdBQUc7QUFDUixNQUFNLENBQUMsQ0FBQyxDQUFDLE9BQU8sQ0FBQ0EsS0FBSyxDQUFDLEVBQUUsQ0FBQztBQUMxQixNQUFNLENBQUMsTUFBTSxDQUFDLE9BQU8sQ0FBQyxDQUFDSyxpQkFBaUIsQ0FBQyxDQUFDLFNBQVMsRUFBRSxNQUFNO0FBQzNEO0FBQ0EsTUFBTSxDQUFDTCxLQUFLLEdBQUcsRUFBRSxJQUNULENBQUMsQ0FBQyxDQUFDLHVCQUF1QixFQUFFLENBQUMsQ0FDOUI7QUFDUCxNQUFNLENBQUMsTUFBTSxDQUFDLFFBQVEsQ0FBQyxDQUFDQSxLQUFLLEdBQUcsQ0FBQyxDQUFDLENBQUMsT0FBTyxDQUFDLENBQUMsTUFBTUMsUUFBUSxDQUFDLENBQUMsQ0FBQyxDQUFDLENBQUMsV0FBVyxFQUFFLE1BQU07QUFDbEYsSUFBSSxFQUFFLEdBQUcsQ0FBQztBQUVWIiwiaWdub3JlTGlzdCI6W119
 
+})();
+
+/******/ })()
+;
 """
 
 // react-compiler-webpack (webpack) facebook/react issue #29120 1
 
 """
-import { jsx as _jsx } from "react/jsx-runtime";
-import { c as _c } from "react/compiler-runtime";
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "react/compiler-runtime"
+/*!*****************************************!*\
+  !*** external "react/compiler-runtime" ***!
+  \*****************************************/
+(module) {
+
+module.exports = react/compiler-runtime;
+
+/***/ },
+
+/***/ "react/jsx-runtime"
+/*!************************************!*\
+  !*** external "react/jsx-runtime" ***!
+  \************************************/
+(module) {
+
+module.exports = react/jsx-runtime;
+
+/***/ }
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		if (!(moduleId in __webpack_modules__)) {
+/******/ 			delete __webpack_module_cache__[moduleId];
+/******/ 			var e = new Error("Cannot find module '" + moduleId + "'");
+/******/ 			e.code = 'MODULE_NOT_FOUND';
+/******/ 			throw e;
+/******/ 		}
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+var __webpack_exports__ = {};
+// This entry needs to be wrapped in an IIFE because it needs to be isolated against other modules in the chunk.
+(() => {
+/*!*****************!*\
+  !*** ./cjk.tsx ***!
+  \*****************/
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Comp)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_compiler_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/compiler-runtime */ "react/compiler-runtime");
+/* harmony import */ var react_compiler_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_compiler_runtime__WEBPACK_IMPORTED_MODULE_1__);
+
+
 // https://github.com/facebook/react/issues/29120
-export default function Comp() {
-    const $ = _c(1);
+function Comp() {
+    const $ = (0,react_compiler_runtime__WEBPACK_IMPORTED_MODULE_1__.c)(1);
     let t0;
     if ($[0] === Symbol.for("react.memo_cache_sentinel")) {
-        t0 = /*#__PURE__*/ _jsx("div", {
+        t0 = /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
             "aria-label": "\u6211\u80FD\u541E\u4E0B\u73BB\u7483\u800C\u4E0D\u4F24\u8EAB\u4F53",
             children: "我能吞下玻璃而不伤身体"
         });
@@ -160,6 +621,10 @@ export default function Comp() {
     return t0;
 } //# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJDb21wIiwiJCIsIl9jIiwidDAiLCJTeW1ib2wiLCJmb3IiXSwic291cmNlcyI6WyIvVXNlcnMvc3Vra2EvUHJvamVjdC9yZWFjdC1jb21waWxlci13ZWJwYWNrL3Rlc3QvZml4dHVyZXMvY2prLnRzeCJdLCJzb3VyY2VzQ29udGVudCI6WyIvLyBodHRwczovL2dpdGh1Yi5jb20vZmFjZWJvb2svcmVhY3QvaXNzdWVzLzI5MTIwXG5leHBvcnQgZGVmYXVsdCBmdW5jdGlvbiBDb21wKCkge1xuICByZXR1cm4gKFxuICAgIDxkaXYgYXJpYS1sYWJlbD1cIuaIkeiDveWQnuS4i+eOu+eSg+iAjOS4jeS8pOi6q+S9k1wiPlxuICAgICAg5oiR6IO95ZCe5LiL546755KD6ICM5LiN5Lyk6Lqr5L2TXG4gICAgPC9kaXY+XG4gIClcbn1cbiJdLCJtYXBwaW5ncyI6IjtBQUFBO0FBQ0EsZUFBZSxTQUFBQSxLQUFBO0VBQUEsTUFBQUMsQ0FBQSxHQUFBQyxFQUFBO0VBQUEsSUFBQUMsRUFBQTtFQUFBLElBQUFGLENBQUEsUUFBQUcsTUFBQSxDQUFBQyxHQUFBO0lBRVhGLEVBQUEsT0FFTSxDQUZVLFVBQWEsQ0FBYixxRUFBWSxDQUFDLENBQUMsV0FFOUIsRUFGQSxHQUVNO0lBQUFGLENBQUEsTUFBQUUsRUFBQTtFQUFBO0lBQUFBLEVBQUEsR0FBQUYsQ0FBQTtFQUFBO0VBQUEsT0FGTkUsRUFFTTtBQUFBIiwiaWdub3JlTGlzdCI6W119
 
+})();
+
+/******/ })()
+;
 """
 
 // react-compiler-webpack (rspack) should work 1
