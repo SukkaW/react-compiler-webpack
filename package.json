@@ -65,5 +65,9 @@
   "peerDependencies": {
     "babel-plugin-react-compiler": "*"
   },
-  "packageManager": "pnpm@11.1.2"
+  "packageManager": "pnpm@11.1.2",
+  "bugs": {
+    "url": "https://github.com/SukkaW/react-compiler-webpack/issues"
+  },
+  "homepage": "https://github.com/SukkaW/react-compiler-webpack#readme"
 }
