@@ -3,6 +3,10 @@
   "version": "1.0.1",
   "description": "The webpack/Next.js Plugin for React Compiler",
   "repository": "https://github.com/SukkaW/react-compiler-webpack",
+  "homepage": "https://github.com/SukkaW/react-compiler-webpack#readme",
+  "bugs": {
+    "url": "https://github.com/SukkaW/react-compiler-webpack/issues"
+  },
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
