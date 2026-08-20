@@ -32,9 +32,9 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@babel/core": "^7.29.7",
-    "@babel/plugin-syntax-jsx": "^7.29.7",
-    "@babel/plugin-syntax-typescript": "^7.29.7"
+    "@babel/core": "^8.0.1",
+    "@babel/plugin-syntax-jsx": "^8.0.1",
+    "@babel/plugin-syntax-typescript": "^8.0.3"
   },
   "devDependencies": {
     "@eslint-sukka/node": "^9.0.1",

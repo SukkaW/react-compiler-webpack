@@ -1,23 +1,26 @@
-import babel from '@babel/core';
+import type { InputOptions as BabelTransformOptions } from '@babel/core';
+
 import BabelPluginReactCompiler from 'babel-plugin-react-compiler';
 
 import type Webpack from 'webpack';
 import type { PluginOptions as ReactCompilerConfig } from 'babel-plugin-react-compiler';
 
 export interface ReactCompilerLoaderOption extends Partial<ReactCompilerConfig> {
-  babelTransFormOpt?: babel.TransformOptions
+  babelTransFormOpt?: BabelTransformOptions
 }
 
-const defaultBabelParsePlugins: NonNullable<NonNullable<babel.TransformOptions['parserOpts']>['plugins']> = ['jsx', 'typescript'];
+const defaultBabelParsePlugins: NonNullable<NonNullable<BabelTransformOptions['parserOpts']>['plugins']> = ['jsx', 'typescript'];
 
 export default async function reactCompilerLoader(this: Webpack.LoaderContext<ReactCompilerLoaderOption>, input: string, _inputSourceMap: any) {
   const callback = this.async();
 
   // TODO: is it possible to bail out early if the input doesn't contain a react component?
   try {
+    const babelCore = await import('@babel/core');
+
     const { babelTransFormOpt, ...reactCompilerConfig } = this.getOptions();
 
-    const result = await babel.transformAsync(input, {
+    const result = await babelCore.transformAsync(input, {
       sourceFileName: this.resourcePath,
       filename: this.resourcePath,
       cloneInputAst: false,
@@ -48,6 +51,7 @@ export default async function reactCompilerLoader(this: Webpack.LoaderContext<Re
     }
 
     const { code, map } = result;
+    // @ts-expect-error -- babel v8 source map types conflict with webpack
     callback(null, code ?? undefined, map ?? undefined);
   } catch (e) {
     callback(e as Error);
