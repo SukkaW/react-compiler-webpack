@@ -38,7 +38,7 @@
   },
   "devDependencies": {
     "@eslint-sukka/node": "^9.0.1",
-    "@rspack/core": "^2.1.10",
+    "@rspack/core": "^2.2.2",
     "@swc-node/register": "^1.12.1",
     "@swc/core": "^1.16.1",
     "@types/babel__core": "^7.20.5",
@@ -48,14 +48,14 @@
     "browserslist": "^4.28.8",
     "bumpp": "^10.4.1",
     "earl": "^2.0.0",
-    "eslint": "^10.8.1",
+    "eslint": "^10.9.1",
     "eslint-config-sukka": "^9.0.1",
     "eslint-formatter-sukka": "^9.0.1",
-    "expect": "^30.4.1",
+    "expect": "^30.5.1",
     "foxts": "^5.9.1",
     "memfs": "^5.0.0-next.1",
-    "mocha": "^11.8.0",
-    "rollup": "^4.62.4",
+    "mocha": "^12.0.0",
+    "rollup": "^4.63.1",
     "rollup-plugin-dts": "^6.5.1",
     "rollup-plugin-swc3": "^0.12.1",
     "swc-loader": "^0.2.7",
@@ -65,5 +65,5 @@
   "peerDependencies": {
     "babel-plugin-react-compiler": "*"
   },
-  "packageManager": "pnpm@11.22.0"
+  "packageManager": "pnpm@11.25.0"
 }
