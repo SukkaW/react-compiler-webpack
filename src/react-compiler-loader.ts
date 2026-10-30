@@ -9,7 +9,26 @@ export interface ReactCompilerLoaderOption extends Partial<ReactCompilerConfig> 
   babelTransFormOpt?: BabelTransformOptions
 }
 
-const defaultBabelParsePlugins: NonNullable<NonNullable<BabelTransformOptions['parserOpts']>['plugins']> = ['jsx', 'typescript'];
+type BabelParsePlugins = NonNullable<NonNullable<BabelTransformOptions['parserOpts']>['plugins']>;
+
+const defaultBabelParsePlugins: BabelParsePlugins = ['jsx', 'typescript'];
+// `<T>(v: T) => v` is read as a JSX element when the jsx plugin is on
+const tsBabelParsePlugins: BabelParsePlugins = ['typescript'];
+// .mts and .cts reserve that syntax even though they can not contain jsx
+const mtsBabelParsePlugins: BabelParsePlugins = [['typescript', { disallowAmbiguousJSXLike: true }]];
+
+const tsRe = /\.ts$/i;
+const mtsRe = /\.[cm]ts$/i;
+
+function getBabelParsePlugins(resourcePath: string): BabelParsePlugins {
+  if (mtsRe.test(resourcePath)) {
+    return mtsBabelParsePlugins;
+  }
+  if (tsRe.test(resourcePath)) {
+    return tsBabelParsePlugins;
+  }
+  return defaultBabelParsePlugins;
+}
 
 export default async function reactCompilerLoader(this: Webpack.LoaderContext<ReactCompilerLoaderOption>, input: string, _inputSourceMap: any) {
   const callback = this.async();
@@ -34,10 +53,11 @@ export default async function reactCompilerLoader(this: Webpack.LoaderContext<Re
       // override babel parserOpts
       parserOpts: {
         ...babelTransFormOpt?.parserOpts,
-        // override babel parserOpts plugins and add jsx
+        // the extension decides the grammar, so these come first: babel's parser keeps
+        // the first entry for a plugin and drops later duplicates
         plugins: [
-          ...(babelTransFormOpt?.parserOpts?.plugins || []),
-          ...defaultBabelParsePlugins
+          ...getBabelParsePlugins(this.resourcePath),
+          ...(babelTransFormOpt?.parserOpts?.plugins || [])
         ]
       },
       ast: false,

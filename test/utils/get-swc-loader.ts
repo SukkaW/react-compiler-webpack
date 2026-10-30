@@ -1,18 +1,15 @@
 import type { Options as SwcOptions } from '@swc/core';
 
-export function useSwcLoader(isTSX: boolean, loader = 'swc-loader') {
+export type SwcSyntax = 'jsx' | 'tsx' | 'ts';
+
+export function useSwcLoader(syntax: SwcSyntax, loader = 'swc-loader') {
   return {
     loader,
     options: {
       jsc: {
-        parser: {
-          syntax: isTSX ? 'typescript' : 'ecmascript',
-          ...(
-            isTSX
-              ? { tsx: true }
-              : { jsx: true }
-          )
-        },
+        parser: syntax === 'jsx'
+          ? { syntax: 'ecmascript', jsx: true }
+          : { syntax: 'typescript', tsx: syntax === 'tsx' },
         target: 'esnext',
         transform: {
           react: {

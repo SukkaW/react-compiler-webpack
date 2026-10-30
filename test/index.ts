@@ -5,6 +5,7 @@ import getRspackCompiler from './utils/get-rspack-compiler';
 
 import compile from './utils/compile';
 import getModuleSource from './utils/get-module-source';
+import getErrors from './utils/get-errors';
 
 import { expect } from 'earl';
 import { describe, it } from 'mocha';
@@ -58,6 +59,41 @@ const defaultOption = defineReactCompilerLoaderOption({
       const stats = await compile(compiler);
 
       expect(getModuleSource('./cjk.tsx', stats, fs)).toMatchSnapshot(this);
+    });
+
+    it('should work with a generic arrow function in a non-jsx ts file', async () => {
+      const [compiler, fs] = getCompiler('./generic-arrow.ts', defaultOption);
+      const stats = await compile(compiler);
+
+      // not a snapshot, its source map would embed an absolute path
+      expect(getErrors(stats)).toEqual([]);
+      expect(getModuleSource('./generic-arrow.ts', stats, fs)).toInclude('_c(');
+    });
+
+    it('should work with a generic arrow function in an mts file', async () => {
+      const [compiler, fs] = getCompiler('./generic-arrow.mts', defaultOption);
+      const stats = await compile(compiler);
+
+      expect(getErrors(stats)).toEqual([]);
+      expect(getModuleSource('./generic-arrow.mts', stats, fs)).toInclude('_c(');
+    });
+
+    it('should reject an ambiguous generic arrow in an mts file', async () => {
+      const [compiler] = getCompiler('./ambiguous.mts', defaultOption);
+      const stats = await compile(compiler);
+
+      expect(getErrors(stats).join('\n')).toInclude('reserved in files with the .mts or .cts extension');
+    });
+
+    // a user plugin list must not shadow the plugin the extension picked
+    it('should reject an ambiguous generic arrow in an mts file with user parser plugins', async () => {
+      const [compiler] = getCompiler('./ambiguous.mts', {
+        ...defaultOption,
+        babelTransFormOpt: { parserOpts: { plugins: ['typescript'] } }
+      });
+      const stats = await compile(compiler);
+
+      expect(getErrors(stats).join('\n')).toInclude('reserved in files with the .mts or .cts extension');
     });
   });
 });
