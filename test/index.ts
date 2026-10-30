@@ -53,6 +53,14 @@ const defaultOption = defineReactCompilerLoaderOption({
       expect(getModuleSource('./complex.tsx', stats, fs)).toMatchSnapshot(this);
     });
 
+    // https://github.com/facebook/react/issues/29120
+    it('facebook/react issue #29120', async function (this) {
+      const [compiler, fs] = getCompiler('./cjk.tsx', defaultOption);
+      const stats = await compile(compiler);
+
+      expect(getModuleSource('./cjk.tsx', stats, fs)).toMatchSnapshot(this);
+    });
+
     it('should work with a generic arrow function in a non-jsx ts file', async () => {
       const [compiler, fs] = getCompiler('./generic-arrow.ts', defaultOption);
       const stats = await compile(compiler);
@@ -62,12 +70,19 @@ const defaultOption = defineReactCompilerLoaderOption({
       expect(getModuleSource('./generic-arrow.ts', stats, fs)).toInclude('_c(');
     });
 
-    // https://github.com/facebook/react/issues/29120
-    it('facebook/react issue #29120', async function (this) {
-      const [compiler, fs] = getCompiler('./cjk.tsx', defaultOption);
+    it('should work with a generic arrow function in an mts file', async () => {
+      const [compiler, fs] = getCompiler('./generic-arrow.mts', defaultOption);
       const stats = await compile(compiler);
 
-      expect(getModuleSource('./cjk.tsx', stats, fs)).toMatchSnapshot(this);
+      expect(getErrors(stats)).toEqual([]);
+      expect(getModuleSource('./generic-arrow.mts', stats, fs)).toInclude('_c(');
+    });
+
+    it('should reject an ambiguous generic arrow in an mts file', async () => {
+      const [compiler] = getCompiler('./ambiguous.mts', defaultOption);
+      const stats = await compile(compiler);
+
+      expect(getErrors(stats).join('\n')).toInclude('reserved in files with the .mts or .cts extension');
     });
   });
 });

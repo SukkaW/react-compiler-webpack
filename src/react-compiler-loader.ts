@@ -13,14 +13,21 @@ type BabelParsePlugins = NonNullable<NonNullable<BabelTransformOptions['parserOp
 
 const defaultBabelParsePlugins: BabelParsePlugins = ['jsx', 'typescript'];
 // `<T>(v: T) => v` is read as a JSX element when the jsx plugin is on
-const nonJsxBabelParsePlugins: BabelParsePlugins = ['typescript'];
+const tsBabelParsePlugins: BabelParsePlugins = ['typescript'];
+// .mts and .cts reserve that syntax even though they can not contain jsx
+const mtsBabelParsePlugins: BabelParsePlugins = [['typescript', { disallowAmbiguousJSXLike: true }]];
 
-const nonJsxTypeScriptRe = /\.[cm]?ts$/i;
+const tsRe = /\.ts$/i;
+const mtsRe = /\.[cm]ts$/i;
 
 function getBabelParsePlugins(resourcePath: string): BabelParsePlugins {
-  return nonJsxTypeScriptRe.test(resourcePath)
-    ? nonJsxBabelParsePlugins
-    : defaultBabelParsePlugins;
+  if (mtsRe.test(resourcePath)) {
+    return mtsBabelParsePlugins;
+  }
+  if (tsRe.test(resourcePath)) {
+    return tsBabelParsePlugins;
+  }
+  return defaultBabelParsePlugins;
 }
 
 export default async function reactCompilerLoader(this: Webpack.LoaderContext<ReactCompilerLoaderOption>, input: string, _inputSourceMap: any) {
