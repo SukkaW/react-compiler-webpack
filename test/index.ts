@@ -84,5 +84,16 @@ const defaultOption = defineReactCompilerLoaderOption({
 
       expect(getErrors(stats).join('\n')).toInclude('reserved in files with the .mts or .cts extension');
     });
+
+    // a user plugin list must not shadow the plugin the extension picked
+    it('should reject an ambiguous generic arrow in an mts file with user parser plugins', async () => {
+      const [compiler] = getCompiler('./ambiguous.mts', {
+        ...defaultOption,
+        babelTransFormOpt: { parserOpts: { plugins: ['typescript'] } }
+      });
+      const stats = await compile(compiler);
+
+      expect(getErrors(stats).join('\n')).toInclude('reserved in files with the .mts or .cts extension');
+    });
   });
 });

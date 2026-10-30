@@ -53,10 +53,11 @@ export default async function reactCompilerLoader(this: Webpack.LoaderContext<Re
       // override babel parserOpts
       parserOpts: {
         ...babelTransFormOpt?.parserOpts,
-        // override babel parserOpts plugins and add jsx, except in non-jsx ts
+        // the extension decides the grammar, so these come first: babel's parser keeps
+        // the first entry for a plugin and drops later duplicates
         plugins: [
-          ...(babelTransFormOpt?.parserOpts?.plugins || []),
-          ...getBabelParsePlugins(this.resourcePath)
+          ...getBabelParsePlugins(this.resourcePath),
+          ...(babelTransFormOpt?.parserOpts?.plugins || [])
         ]
       },
       ast: false,
