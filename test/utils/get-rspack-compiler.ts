@@ -35,7 +35,7 @@ export default (fixture: string, loaderOptions?: ReactCompilerLoaderOption, conf
           test: /\.[cm]?jsx$/i,
           exclude: /node_modules/,
           use: [
-            useSwcLoader(false, 'builtin:swc-loader'),
+            useSwcLoader('jsx', 'builtin:swc-loader'),
             {
               loader: reactCompilerLoader,
               options: loaderOptions
@@ -46,7 +46,18 @@ export default (fixture: string, loaderOptions?: ReactCompilerLoaderOption, conf
           test: /\.[cm]?tsx$/i,
           exclude: /node_modules/,
           use: [
-            useSwcLoader(true, 'builtin:swc-loader'),
+            useSwcLoader('tsx', 'builtin:swc-loader'),
+            {
+              loader: reactCompilerLoader,
+              options: loaderOptions
+            }
+          ]
+        },
+        {
+          test: /\.[cm]?ts$/i,
+          exclude: /node_modules/,
+          use: [
+            useSwcLoader('ts', 'builtin:swc-loader'),
             {
               loader: reactCompilerLoader,
               options: loaderOptions

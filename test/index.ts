@@ -5,6 +5,7 @@ import getRspackCompiler from './utils/get-rspack-compiler';
 
 import compile from './utils/compile';
 import getModuleSource from './utils/get-module-source';
+import getErrors from './utils/get-errors';
 
 import { expect } from 'earl';
 import { describe, it } from 'mocha';
@@ -50,6 +51,15 @@ const defaultOption = defineReactCompilerLoaderOption({
       const stats = await compile(compiler);
 
       expect(getModuleSource('./complex.tsx', stats, fs)).toMatchSnapshot(this);
+    });
+
+    it('should work with a generic arrow function in a non-jsx ts file', async () => {
+      const [compiler, fs] = getCompiler('./generic-arrow.ts', defaultOption);
+      const stats = await compile(compiler);
+
+      // not a snapshot, its source map would embed an absolute path
+      expect(getErrors(stats)).toEqual([]);
+      expect(getModuleSource('./generic-arrow.ts', stats, fs)).toInclude('_c(');
     });
 
     // https://github.com/facebook/react/issues/29120
